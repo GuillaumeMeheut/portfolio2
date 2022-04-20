@@ -1,10 +1,23 @@
 @import '~config/index.module.scss';
 
-.transition {
-  position: absolute;
-  background: $black;
-  width: 100vw;
-  height: 100vh;
-  z-index: 200;
-  pointer-events: none;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: 'Gruppo', sans-serif;
+  font-size: 2em;
+
+  margin: $pageMargin;
+
+  nav {
+    color: $primary;
+    display: flex;
+    a:nth-child(1) {
+      margin-right: 2em;
+    }
+    a:nth-child(2) {
+      margin-right: 7em;
+    }
+  }
 }

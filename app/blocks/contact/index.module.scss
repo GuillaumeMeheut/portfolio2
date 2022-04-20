@@ -1,0 +1,12 @@
+@import '~config/index.module.scss';
+
+.section {
+  h4 {
+    margin-left: 20em;
+    margin-bottom: 8em;
+  }
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+}

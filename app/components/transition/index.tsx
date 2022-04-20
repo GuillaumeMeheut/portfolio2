@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import css from './index.module.scss'
+
 const variants = {
   initial: {
     opacity: 1,
@@ -8,13 +9,13 @@ const variants = {
     opacity: 0,
   },
   exit: {
-    opacity: 1,
+    opacity: 0,
   },
 }
 
 export const Transition = ({ Key }) => {
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence>
       <motion.div
         className={css.transition}
         key={Key}
@@ -23,7 +24,7 @@ export const Transition = ({ Key }) => {
         animate="animate"
         exit="exit"
         transition={{
-          duration: 0.3,
+          duration: 0.5,
         }}
       />
     </AnimatePresence>

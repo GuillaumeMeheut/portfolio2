@@ -1,0 +1,16 @@
+{
+  "title": "Guillaume Meheut | Contact",
+  "keywords": "guillaume meheut, portfolio, web developer, front, react, next.js, next, contact",
+  "titlePage": "Let’s start a project <br> together",
+  "infos": "Informations",
+  "mail": "guillaume.meheutpro@gmail.com",
+  "tel": "+33 6 51 96 30 47",
+  "location": "Location: France",
+  "socials": "Socials",
+  "github": "Github",
+  "linkedin": "LinkedIn",
+  "labelName": "What’s your name ?",
+  "labelMail": "What’s your email ?",
+  "labelMessage": "Your message",
+  "placeholderMessage": "Hello, I would like a site with X features, for the moment we are at X stage..."
+}

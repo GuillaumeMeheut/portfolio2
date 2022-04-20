@@ -5,7 +5,6 @@ import style from 'config/index.module.scss'
 import './_app.scss'
 import { Transition } from 'app/components/transition'
 import { appWithTranslation } from 'next-i18next'
-import i18next from 'i18next'
 
 const PAGE_MAX_WIDTH = parseFloat(style.pageMaxWidth) * 10 + 80
 

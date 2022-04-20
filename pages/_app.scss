@@ -4,10 +4,15 @@
 body {
   font-size: 10px;
   font-family: Lato, sans-serif;
+  background: $black;
+  color: $primary;
+
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 4em;
 }
 
 p {
@@ -15,5 +20,5 @@ p {
 }
 
 strong {
-  font-weight: $bold;
+  font-weight: 700;
 }

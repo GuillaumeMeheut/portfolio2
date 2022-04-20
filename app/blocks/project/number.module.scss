@@ -1,0 +1,24 @@
+@import '~config/index.module.scss';
+
+.svgNumber {
+  fill: $primary;
+  width: 321px;
+  height: 200px;
+
+  .filledText {
+    fill: transparent;
+  }
+  mask {
+    rect {
+      width: 321px;
+      height: 200px;
+      transform-origin: bottom;
+    }
+  }
+
+  text {
+    font-size: 275px;
+    stroke: $primary;
+    stroke-width: 2px;
+  }
+}
