@@ -66,7 +66,7 @@ const Input = ({
             r="6"
           />
         </svg>
-        <input type="text" value={value} placeholder={placeholder} />
+        {/* <input type="text" value={value} placeholder={placeholder} /> */}
       </div>
     </div>
   )

@@ -17,8 +17,9 @@ export const Project = () => {
   useEffect(() => {
     if (ref) {
       const section = ref.current
-      section.addEventListener('wheel', onWheeling)
-      return () => section.removeEventListener('wheel', onWheeling)
+      section.addEventListener('wheel', onWheeling, { passive: true })
+      return () =>
+        section.removeEventListener('wheel', onWheeling, { passive: true })
     }
   }, [ref, wheeling, animating])
 
@@ -27,15 +28,17 @@ export const Project = () => {
   }, [index])
 
   const onWheeling = (e) => {
-    e.preventDefault()
     const newWheeling = wheeling + e.deltaY
     if (
       newWheeling >= 0 &&
       newWheeling < Projects.length * 1000 &&
       !animating
     ) {
-      const index = Math.floor(wheeling / 1000)
-      setIndex(index)
+      const newIndex = Math.floor(wheeling / 1000)
+      if (newIndex !== index) {
+        setIndex(newIndex)
+        return
+      }
       setWheeling(newWheeling)
     }
   }

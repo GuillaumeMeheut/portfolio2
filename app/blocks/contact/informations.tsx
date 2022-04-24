@@ -1,18 +1,59 @@
+import { motion } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
-import css from './index.module.scss'
+import React from 'react'
+import css from './informations.module.scss'
+
+const variants = {
+  initial: {
+    opacity: 0,
+    x: 100,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+  },
+}
 
 export const Informations = ({}) => {
   const t1 = useTranslation('contact')
 
+  const informations = [
+    {
+      title: t1.t('infos'),
+      infos: [t1.t('mail'), t1.t('tel'), t1.t('location')],
+    },
+    {
+      title: t1.t('socials'),
+      infos: [t1.t('github'), t1.t('linkedin')],
+    },
+  ]
+
   return (
-    <div className={css.container}>
-      <h6>{t1.t('infos')}</h6>
-      <p>{t1.t('mail')}</p>
-      <p>{t1.t('tel')}</p>
-      <p>{t1.t('location')}</p>
-      <h6>{t1.t('socials')}</h6>
-      <p>{t1.t('github')}</p>
-      <p>{t1.t('linkedin')}</p>
-    </div>
+    <motion.div
+      className={css.container}
+      transition={{ staggerChildren: 0.2, delayChildren: 1.5 }}
+    >
+      {informations.map((info, index) => {
+        return (
+          <React.Fragment key={index}>
+            <motion.h6 variants={variants} initial="initial" animate="animate">
+              {info.title}
+            </motion.h6>
+            {info.infos.map((text) => {
+              return (
+                <motion.p
+                  key={text}
+                  variants={variants}
+                  initial="initial"
+                  animate="animate"
+                >
+                  {text}
+                </motion.p>
+              )
+            })}
+          </React.Fragment>
+        )
+      })}
+    </motion.div>
   )
 }
