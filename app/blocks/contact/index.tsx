@@ -10,7 +10,6 @@ export const Contact = ({}) => {
     <section className={css.section}>
       <h4 dangerouslySetInnerHTML={{ __html: t1.t('titlePage') }}></h4>
       <div className={css.wrap}>
-        {/* formulaire */}
         <Formulaire />
         <Informations />
       </div>

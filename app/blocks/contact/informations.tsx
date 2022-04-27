@@ -20,11 +20,21 @@ export const Informations = ({}) => {
   const informations = [
     {
       title: t1.t('infos'),
-      infos: [t1.t('mail'), t1.t('tel'), t1.t('location')],
+      infos: [
+        { text: t1.t('mail') },
+        { text: t1.t('tel') },
+        { text: t1.t('location') },
+      ],
     },
     {
       title: t1.t('socials'),
-      infos: [t1.t('github'), t1.t('linkedin')],
+      infos: [
+        { text: t1.t('github'), href: 'https://github.com/GuillaumeMeheut' },
+        {
+          text: t1.t('linkedin'),
+          href: 'https://www.linkedin.com/in/guillaume-meheut-836b66199/',
+        },
+      ],
     },
   ]
 
@@ -39,16 +49,31 @@ export const Informations = ({}) => {
             <motion.h6 variants={variants} initial="initial" animate="animate">
               {info.title}
             </motion.h6>
-            {info.infos.map((text) => {
+            {info.infos.map((el) => {
               return (
-                <motion.p
-                  key={text}
-                  variants={variants}
-                  initial="initial"
-                  animate="animate"
-                >
-                  {text}
-                </motion.p>
+                <>
+                  {el.href ? (
+                    <motion.a
+                      key={el}
+                      href={el.href}
+                      target={'_blank'}
+                      variants={variants}
+                      initial="initial"
+                      animate="animate"
+                    >
+                      {el.text}
+                    </motion.a>
+                  ) : (
+                    <motion.p
+                      key={el}
+                      variants={variants}
+                      initial="initial"
+                      animate="animate"
+                    >
+                      {el.text}
+                    </motion.p>
+                  )}
+                </>
               )
             })}
           </React.Fragment>

@@ -1,35 +1,65 @@
 @import '~config/index.module.scss';
 
 .container {
+  margin-left: 3em;
   .inputContainer {
-    .numberContainer {
+    label {
+      font-size: 4em;
+    }
+
+    .numberInputContainer {
       display: flex;
       justify-content: center;
       align-items: center;
 
-      p {
-        font-size: 5em;
-        font-weight: 200;
+      margin-top: 2em;
+      margin-bottom: 6em;
+
+      .numberContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 3em;
+
+        p {
+          font-size: 5em;
+          font-weight: 200;
+        }
+
+        svg {
+          margin-top: 1em;
+          margin-left: 1.5em;
+
+          circle {
+            fill: transparent;
+            stroke: $primary;
+            stroke-width: 1px;
+            transition: 0.3s;
+          }
+
+          .circleError {
+            fill: $error;
+            stroke: $error;
+          }
+
+          .circleComplete {
+            fill: $primary;
+          }
+        }
       }
 
-      svg {
-        margin-top: 1em;
+      input {
+        color: $primary;
+        font-family: $lato;
+        font-size: 3.5em;
+        font-weight: 300;
+        background: transparent;
+        border: none;
+        border-bottom: solid 1px $primary;
+        outline: none;
+        padding: 5px 30px 20px;
 
-        circle {
-          fill: transparent;
-          stroke: $primary;
-          stroke-width: 1px;
-          transition: 0.3s;
-        }
-
-        .circleError {
-          fill: $error;
-          stroke: $error;
-        }
-
-        .circleComplete {
-          fill: $primary;
-        }
+        width: 20em;
       }
     }
   }

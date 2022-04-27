@@ -1,9 +1,10 @@
 @import '~config/index.module.scss';
 
 .section {
+  margin-left: 20em;
   h4 {
-    margin-left: 20em;
-    margin-bottom: 8em;
+    font-size: 10em;
+    margin-bottom: 0.8em;
   }
   .wrap {
     display: flex;
