@@ -31,8 +31,8 @@ export const Earth = ({}) => {
 
 export default function Model({ ...props }) {
   const group = useRef(null)
+  //@ts-ignore
   const { nodes, materials } = useGLTF('/assets/earth.gltf')
-  console.log(rotation)
 
   return (
     <group
@@ -40,7 +40,7 @@ export default function Model({ ...props }) {
       {...props}
       dispose={null}
       scale={2.7}
-      rotation={[rotation, 0, 0.5]}
+      rotation={[0, 0, 0.5]}
     >
       <mesh geometry={nodes.Sphere.geometry} material={materials['default']} />
     </group>
