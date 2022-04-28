@@ -11,6 +11,7 @@ const variants = {
   animate: {
     opacity: 1,
     x: 0,
+    transition: { duration: 2 },
   },
 }
 
@@ -51,10 +52,9 @@ export const Informations = ({}) => {
             </motion.h6>
             {info.infos.map((el) => {
               return (
-                <>
+                <React.Fragment key={el.text}>
                   {el.href ? (
                     <motion.a
-                      key={el}
                       href={el.href}
                       target={'_blank'}
                       variants={variants}
@@ -65,7 +65,6 @@ export const Informations = ({}) => {
                     </motion.a>
                   ) : (
                     <motion.p
-                      key={el}
                       variants={variants}
                       initial="initial"
                       animate="animate"
@@ -73,7 +72,7 @@ export const Informations = ({}) => {
                       {el.text}
                     </motion.p>
                   )}
-                </>
+                </React.Fragment>
               )
             })}
           </React.Fragment>

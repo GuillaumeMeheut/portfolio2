@@ -24,12 +24,15 @@
 
   a {
     &::after {
+      content: '';
       position: absolute;
-      content: url(../../../public/assets/link_ext.svg);
-      right: -25px;
+      background-image: url(../../../public/assets/link_ext.svg);
+      background-position: center;
+      background-size: 0.7em;
+      width: 0.7em;
+      height: 0.7em;
+      top: 5px;
+      right: -28px;
     }
-    // :hover {
-    //   text-decoration: underline;
-    // }
   }
 }

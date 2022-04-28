@@ -5,73 +5,107 @@ import { motion } from 'framer-motion'
 
 export const Formulaire = ({}) => {
   const t1 = useTranslation('contact')
-  const [invalid, setInvalid] = useState(false)
-  const [complete, setComplete] = useState(false)
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(1)
 
   const verifyName = (value) => {
-    if (value.length >= 2 && step === 0) {
+    if (value.length >= 2 && step === 1) {
       setStep(step + 1)
     }
-    console.log(value)
   }
+  const verifyEmail = (value) => {
+    let error
+    if (!value) error = 'Champs requis'
+    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value))
+      error = 'Email invalide'
+    else if (step === 2) {
+      setStep(step + 1)
+    }
+  }
+
+  console.log(step)
 
   return (
     <div className={css.container}>
-      <p onClick={() => setInvalid(!invalid)}>Make invalid</p>
-      <p onClick={() => setComplete(!complete)}>Make complete</p>
       <Input
+        id={'name'}
         label={t1.t('labelName')}
         placeholder={'John Doe'}
         number={'1'}
         value={''}
-        invalid={invalid}
+        // invalid={invalid}
         onChange={(e) => {
           verifyName(e.target.value)
         }}
       />
       {step > 1 && (
         <Input
+          id={'mail'}
           label={t1.t('labelMail')}
           placeholder={'example@gmail.com'}
           number={'2'}
           value={''}
-          complete={complete}
+          onChange={(e) => {
+            verifyEmail(e.target.value)
+          }}
+          // complete={complete}
         />
       )}
       {step > 2 && (
         <Input
+          id={'message'}
           label={t1.t('labelMessage')}
           placeholder={t1.t('placeholderMessage')}
-          number={'2'}
+          number={'3'}
           value={''}
-          complete={complete}
+          text
+          // complete={complete}
         />
       )}
     </div>
   )
 }
 
+const variants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, type: 'spring', stiffness: 150 },
+  },
+}
+
 type InputProps = {
+  id: string
   label: string
   placeholder: string
   number: string
   value: string
+  text?: boolean
   onChange: (e: any) => any
 }
 
 const Input = ({
+  id,
   label,
   placeholder,
   number,
   value,
+  text = false,
   invalid,
   complete,
   onChange,
 }: InputProps) => {
   return (
-    <div className={css.inputContainer}>
-      <label htmlFor="name">{label}</label>
+    <motion.div
+      className={css.inputContainer}
+      variants={variants}
+      initial="initial"
+      animate="animate"
+    >
+      <label htmlFor={id}>{label}</label>
       <div className={css.numberInputContainer}>
         <div className={css.numberContainer}>
           <p>{number}</p>
@@ -92,8 +126,23 @@ const Input = ({
             />
           </svg>
         </div>
-        <input type="text" placeholder={placeholder} onChange={onChange} />
+        {text ? (
+          <textarea
+            name={id}
+            id={id}
+            placeholder={placeholder}
+            cols={30}
+            rows={10}
+          />
+        ) : (
+          <input
+            id={id}
+            type="text"
+            placeholder={placeholder}
+            onChange={onChange}
+          />
+        )}
       </div>
-    </div>
+    </motion.div>
   )
 }

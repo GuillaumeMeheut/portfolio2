@@ -1,7 +1,7 @@
 @import '~config/index.module.scss';
 
 .container {
-  margin-left: 3em;
+  margin-left: 5em;
   .inputContainer {
     label {
       font-size: 4em;
@@ -10,7 +10,7 @@
     .numberInputContainer {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
 
       margin-top: 2em;
       margin-bottom: 6em;
@@ -48,7 +48,9 @@
         }
       }
 
-      input {
+      input,
+      textarea {
+        position: relative;
         color: $primary;
         font-family: $lato;
         font-size: 3.5em;
@@ -58,8 +60,26 @@
         border-bottom: solid 1px $primary;
         outline: none;
         padding: 5px 30px 20px;
+        width: 17em;
 
-        width: 20em;
+        transition: 0.3s;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 2000px;
+          height: 3px;
+          right: 0px;
+          bottom: 0px;
+          background-color: red;
+        }
+
+        // &:focus-visible {
+        // }
+      }
+
+      textarea {
+        height: 10em;
       }
     }
   }
