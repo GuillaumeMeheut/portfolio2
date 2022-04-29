@@ -6,12 +6,12 @@ import css from './informations.module.scss'
 const variants = {
   initial: {
     opacity: 0,
-    x: 100,
+    y: 20,
   },
   animate: {
     opacity: 1,
-    x: 0,
-    transition: { duration: 2 },
+    y: 0,
+    transition: { duration: 0.7, type: 'spring' },
   },
 }
 
@@ -42,14 +42,14 @@ export const Informations = ({}) => {
   return (
     <motion.div
       className={css.container}
-      transition={{ staggerChildren: 0.2, delayChildren: 1.5 }}
+      initial={'initial'}
+      animate={'animate'}
+      transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
     >
       {informations.map((info, index) => {
         return (
           <React.Fragment key={index}>
-            <motion.h6 variants={variants} initial="initial" animate="animate">
-              {info.title}
-            </motion.h6>
+            <motion.h6 variants={variants}>{info.title}</motion.h6>
             {info.infos.map((el) => {
               return (
                 <React.Fragment key={el.text}>
@@ -58,19 +58,11 @@ export const Informations = ({}) => {
                       href={el.href}
                       target={'_blank'}
                       variants={variants}
-                      initial="initial"
-                      animate="animate"
                     >
                       {el.text}
                     </motion.a>
                   ) : (
-                    <motion.p
-                      variants={variants}
-                      initial="initial"
-                      animate="animate"
-                    >
-                      {el.text}
-                    </motion.p>
+                    <motion.p variants={variants}>{el.text}</motion.p>
                   )}
                 </React.Fragment>
               )

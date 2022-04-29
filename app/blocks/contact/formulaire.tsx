@@ -6,33 +6,69 @@ import { motion } from 'framer-motion'
 export const Formulaire = ({}) => {
   const t1 = useTranslation('contact')
   const [step, setStep] = useState(1)
+  const [name, setName] = useState({ value: '', error: '', valid: false })
+  const [mail, setMail] = useState({ value: '', error: '', valid: false })
+  const [message, setMessage] = useState({ value: '', error: '', valid: false })
 
   const verifyName = (value) => {
-    if (value.length >= 2 && step === 1) {
-      setStep(step + 1)
+    const newName = { ...name }
+    newName.value = value
+    if (!value) {
+      newName.valid = false
+      newName.error = 'Fill this champ'
+    } else {
+      newName.valid = true
+      newName.error = ''
+      if (step === 1) setStep(step + 1)
     }
+    setName(newName)
   }
-  const verifyEmail = (value) => {
-    let error
-    if (!value) error = 'Champs requis'
-    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value))
-      error = 'Email invalide'
-    else if (step === 2) {
+  const verifyMail = (value) => {
+    const newMail = { ...mail }
+    newMail.value = value
+    if (!value) {
+      newMail.valid = false
+      newMail.error = 'Fill this champ'
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+      newMail.valid = false
+      newMail.error = 'Email invalide'
+    } else if (step === 2) {
+      newMail.valid = true
+      newMail.error = ''
       setStep(step + 1)
     }
+    setMail(newMail)
   }
 
-  console.log(step)
+  const verifyMessage = (value) => {
+    const newMessage = { ...message }
+    newMessage.value = value
+    if (!value) {
+      newMessage.valid = false
+      newMessage.error = 'Fill this champ'
+    } else {
+      newMessage.valid = true
+      newMessage.error = ''
+      if (step === 3) setStep(step + 1)
+    }
+    setMessage(newMessage)
+  }
+
+  const sendMail = (e) => {
+    e.preventDefault()
+    console.log('hello')
+  }
 
   return (
-    <div className={css.container}>
+    <form className={css.container} onSubmit={(e) => sendMail(e)}>
       <Input
         id={'name'}
         label={t1.t('labelName')}
         placeholder={'John Doe'}
         number={'1'}
-        value={''}
-        // invalid={invalid}
+        value={name.value}
+        valid={name.valid}
+        error={name.error}
         onChange={(e) => {
           verifyName(e.target.value)
         }}
@@ -43,25 +79,31 @@ export const Formulaire = ({}) => {
           label={t1.t('labelMail')}
           placeholder={'example@gmail.com'}
           number={'2'}
-          value={''}
+          value={mail.value}
+          valid={mail.valid}
+          error={mail.error}
           onChange={(e) => {
-            verifyEmail(e.target.value)
+            verifyMail(e.target.value)
           }}
-          // complete={complete}
         />
       )}
       {step > 2 && (
         <Input
+          text
           id={'message'}
           label={t1.t('labelMessage')}
           placeholder={t1.t('placeholderMessage')}
           number={'3'}
-          value={''}
-          text
-          // complete={complete}
+          value={message.value}
+          valid={message.valid}
+          error={message.error}
+          onChange={(e) => {
+            verifyMessage(e.target.value)
+          }}
         />
       )}
-    </div>
+      {step > 3 && <button type="submit">Send</button>}
+    </form>
   )
 }
 
@@ -84,6 +126,8 @@ type InputProps = {
   number: string
   value: string
   text?: boolean
+  valid: boolean
+  error: string
   onChange: (e: any) => any
 }
 
@@ -94,8 +138,8 @@ const Input = ({
   number,
   value,
   text = false,
-  invalid,
-  complete,
+  valid,
+  error,
   onChange,
 }: InputProps) => {
   return (
@@ -117,9 +161,7 @@ const Input = ({
             xmlns="http://www.w3.org/2000/svg"
           >
             <circle
-              className={
-                invalid ? css.circleError : complete ? css.circleComplete : ''
-              }
+              className={value.length > 0 ? css.circleComplete : ''}
               cx="6"
               cy="6"
               r="6"
@@ -131,6 +173,7 @@ const Input = ({
             name={id}
             id={id}
             placeholder={placeholder}
+            onChange={onChange}
             cols={30}
             rows={10}
           />
@@ -143,6 +186,7 @@ const Input = ({
           />
         )}
       </div>
+      <span className={css.error}>{error}</span>
     </motion.div>
   )
 }

@@ -3,6 +3,7 @@
 .container {
   margin-left: 5em;
   .inputContainer {
+    position: relative;
     label {
       font-size: 4em;
     }
@@ -74,13 +75,24 @@
           background-color: red;
         }
 
-        // &:focus-visible {
-        // }
+        &:-webkit-autofill,
+        :-webkit-autofill:focus {
+          transition: background-color 600000s 0s, color 600000s 0s;
+        }
       }
 
       textarea {
         height: 10em;
       }
+    }
+
+    .error {
+      position: absolute;
+      font-family: $lato;
+      font-weight: 300;
+      font-size: 2em;
+      bottom: -2.5em;
+      color: $error;
     }
   }
 }
