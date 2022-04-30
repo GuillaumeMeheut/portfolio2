@@ -76,16 +76,25 @@ export const Formulaire = ({}) => {
             message: message.value,
           }),
         })
-        if (res.status === 200) setSend(true)
-        setSend(true)
-        setTimeout(() => {
-          setSend(false)
-          setLoading(false)
-        }, 1300)
+        if (res.status === 200) {
+          setSend(true)
+          setTimeout(() => {
+            setSend(false)
+            emptyFields()
+          }, 1300)
+        }
+        setLoading(false)
       } catch (e) {
         console.log(e)
       }
     }
+  }
+
+  const emptyFields = () => {
+    setName({ value: '', error: '', valid: false })
+    setMail({ value: '', error: '', valid: false })
+    setMessage({ value: '', error: '', valid: false })
+    setStep(1)
   }
 
   return (
