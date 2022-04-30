@@ -1,0 +1,20 @@
+@import '~config/index.module.scss';
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    font-size: 8em;
+    font-weight: 700;
+  }
+}

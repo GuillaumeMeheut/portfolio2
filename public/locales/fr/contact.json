@@ -1,4 +1,21 @@
 {
   "title": "Guillaume Meheut | Contact",
-  "keywords": "guillaume meheut, portfolio, web developer, front, react, next.js, next, contact"
+  "keywords": "guillaume meheut, portfolio, web developer, front, react, next.js, next, contact",
+  "titlePage": "Commençons un projet <br> ensemble",
+  "infos": "Informations",
+  "mail": "guillaume.meheutpro@gmail.com",
+  "tel": "+33 6 51 96 30 47",
+  "location": "Location: France",
+  "socials": "Sociales",
+  "github": "Github",
+  "linkedin": "LinkedIn",
+  "labelName": "Quel est votre nom ?",
+  "labelMail": "Quelle est votre email ?",
+  "labelMessage": "Votre message",
+  "placeholderMessage": "Bonjour, je voudrais un site avec X fonctionnalités, pour le moment nous sommes au stade X...",
+  "send": "Envoyer",
+  "errorEmpty": "C'est vide...",
+  "errorEmailInvalid": "Email invalide",
+  "errorMessage": "C'est vraiment un message ?",
+  "msgSend": "Message envoyé !"
 }

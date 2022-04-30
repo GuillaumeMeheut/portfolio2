@@ -13,5 +13,9 @@
   "labelMail": "What’s your email ?",
   "labelMessage": "Your message",
   "placeholderMessage": "Hello, I would like a site with X features, for the moment we are at X stage...",
-  "send": "Send"
+  "send": "Send",
+  "errorEmpty": "That's empty...",
+  "errorEmailInvalid": "Email invalid",
+  "errorMessage": "Is that really a message ?",
+  "msgSend": "Message sent !"
 }

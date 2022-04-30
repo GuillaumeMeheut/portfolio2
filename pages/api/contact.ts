@@ -7,7 +7,7 @@ export default async function Contact(
   res: NextApiResponse,
 ) {
   try {
-    const { name, email, message } = req.body
+    const { name, email, message } = JSON.parse(req.body)
 
     const transporter = await nodemailer.createTransport({
       port: 465,
@@ -34,7 +34,7 @@ export default async function Contact(
 
     const mailData = {
       from: email,
-      to: process.env.MAIL_EMAIL,
+      to: process.env.MAIL_RECEIVE,
       subject: `Portfolio | Message`,
       text: message,
       html: emailTemplate(message, email, name),

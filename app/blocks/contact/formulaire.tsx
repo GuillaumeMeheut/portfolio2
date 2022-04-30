@@ -1,21 +1,24 @@
 import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
 import css from './formulaire.module.scss'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { AnimMsg } from './animMsg'
 
 export const Formulaire = ({}) => {
   const t1 = useTranslation('contact')
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState<number>(1)
   const [name, setName] = useState({ value: '', error: '', valid: false })
   const [mail, setMail] = useState({ value: '', error: '', valid: false })
   const [message, setMessage] = useState({ value: '', error: '', valid: false })
+  const [send, setSend] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(false)
 
   const verifyName = (value) => {
     const newName = { ...name }
     newName.value = value
     if (!value) {
       newName.valid = false
-      newName.error = 'Fill this champ'
+      newName.error = t1.t('errorEmpty')
     } else {
       newName.valid = true
       newName.error = ''
@@ -28,10 +31,10 @@ export const Formulaire = ({}) => {
     newMail.value = value
     if (!value) {
       newMail.valid = false
-      newMail.error = 'Fill this champ'
+      newMail.error = t1.t('errorEmpty')
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
       newMail.valid = false
-      newMail.error = 'Email invalide'
+      newMail.error = t1.t('errorEmailInvalid')
     } else if (step === 2) {
       newMail.valid = true
       newMail.error = ''
@@ -45,7 +48,10 @@ export const Formulaire = ({}) => {
     newMessage.value = value
     if (!value) {
       newMessage.valid = false
-      newMessage.error = 'Fill this champ'
+      newMessage.error = t1.t('errorEmpty')
+    } else if (value.length < 30) {
+      newMessage.valid = false
+      newMessage.error = t1.t('errorMessage')
     } else {
       newMessage.valid = true
       newMessage.error = ''
@@ -54,9 +60,32 @@ export const Formulaire = ({}) => {
     setMessage(newMessage)
   }
 
-  const sendMail = (e) => {
+  const sendMail = async (e) => {
     e.preventDefault()
-    console.log('hello')
+    verifyName(name.value)
+    verifyMail(mail.value)
+    verifyMessage(message.value)
+    if (name.valid && mail.valid && message.valid) {
+      try {
+        setLoading(true)
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          body: JSON.stringify({
+            name: name.value,
+            email: mail.value,
+            message: message.value,
+          }),
+        })
+        if (res.status === 200) setSend(true)
+        setSend(true)
+        setTimeout(() => {
+          setSend(false)
+          setLoading(false)
+        }, 1300)
+      } catch (e) {
+        console.log(e)
+      }
+    }
   }
 
   return (
@@ -72,6 +101,7 @@ export const Formulaire = ({}) => {
         onChange={(e) => {
           verifyName(e.target.value)
         }}
+        t1={t1}
       />
       {step > 1 && (
         <Input
@@ -85,6 +115,7 @@ export const Formulaire = ({}) => {
           onChange={(e) => {
             verifyMail(e.target.value)
           }}
+          t1={t1}
         />
       )}
       {step > 2 && (
@@ -100,13 +131,35 @@ export const Formulaire = ({}) => {
           onChange={(e) => {
             verifyMessage(e.target.value)
           }}
+          t1={t1}
         />
       )}
-      {step > 3 && <button type="submit">Send</button>}
+      {step > 3 && (
+        <>
+          <button type="submit" className={css.button} disabled={loading}>
+            Send
+          </button>
+          <AnimatePresence>{send && <AnimMsg />}</AnimatePresence>
+        </>
+      )}
     </form>
   )
 }
 
+const variantsError = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+  exit: {
+    opacity: 0,
+    y: -10,
+  },
+}
 const variants = {
   initial: {
     opacity: 0,
@@ -129,6 +182,7 @@ type InputProps = {
   valid: boolean
   error: string
   onChange: (e: any) => any
+  t1: any
 }
 
 const Input = ({
@@ -140,8 +194,19 @@ const Input = ({
   text = false,
   valid,
   error,
+  t1,
   onChange,
 }: InputProps) => {
+  const returnClassnameCircle = (): string => {
+    if (value.length === 0) return ''
+    else if (!valid) return css.circleError
+    return css.circleComplete
+  }
+  const returnClassnameInput = (): string => {
+    if (value.length === 0) return ''
+    else if (!valid) return css.error
+    return css.complete
+  }
   return (
     <motion.div
       className={css.inputContainer}
@@ -160,18 +225,14 @@ const Input = ({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle
-              className={value.length > 0 ? css.circleComplete : ''}
-              cx="6"
-              cy="6"
-              r="6"
-            />
+            <circle className={returnClassnameCircle()} cx="6" cy="6" r="6" />
           </svg>
         </div>
         {text ? (
           <textarea
             name={id}
             id={id}
+            className={returnClassnameInput()}
             placeholder={placeholder}
             onChange={onChange}
             cols={30}
@@ -180,13 +241,26 @@ const Input = ({
         ) : (
           <input
             id={id}
+            className={returnClassnameInput()}
             type="text"
             placeholder={placeholder}
             onChange={onChange}
           />
         )}
       </div>
-      <span className={css.error}>{error}</span>
+      <AnimatePresence exitBeforeEnter>
+        <motion.span
+          key={id + error}
+          className={css.errorMessage}
+          variants={variantsError}
+          initial={'initial'}
+          animate={'animate'}
+          exit={'exit'}
+          transition={{ ease: 'easeInOut' }}
+        >
+          {error}
+        </motion.span>
+      </AnimatePresence>
     </motion.div>
   )
 }
