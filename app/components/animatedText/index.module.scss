@@ -1,0 +1,9 @@
+@import '~config/index.module.scss';
+
+.animatedText {
+  overflow-y: hidden;
+
+  span {
+    display: inline-block;
+  }
+}

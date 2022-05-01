@@ -1,7 +1,8 @@
 {
   "title": "Guillaume Meheut | Contact",
   "keywords": "guillaume meheut, portfolio, web developer, front, react, next.js, next, contact",
-  "titlePage": "Let’s start a project <br> together",
+  "titlePage1": "Let’s start a project",
+  "titlePage2": " together",
   "infos": "Informations",
   "mail": "guillaume.meheutpro@gmail.com",
   "tel": "+33 6 51 96 30 47",

@@ -12,8 +12,11 @@ export const Header = () => {
     <header className={css.header}>
       <h1>Guillaume Meheut</h1>
       <nav>
-        <Link href={router.pathname === '/' ? '/about' : '/'} passHref>
-          <a>{router.pathname === '/' ? t1.t('about') : t1.t('project')}</a>
+        <Link href={'/'} passHref>
+          <a>{t1.t('project')}</a>
+        </Link>
+        <Link href={'/about'} passHref>
+          <a>{t1.t('about')}</a>
         </Link>
         <Link href={'/contact'} passHref>
           <a>{t1.t('contact')}</a>

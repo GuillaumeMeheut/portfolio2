@@ -1,0 +1,60 @@
+@import '~config/index.module.scss';
+
+.container {
+  margin-left: 5em;
+  .border {
+    display: inline-block;
+    margin-bottom: 6em;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $primary;
+      transition: width 0.3s;
+
+      margin-top: 5em;
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100em;
+
+    p {
+      font-size: 2.5em;
+    }
+  }
+}
+
+.containerImgText {
+  display: inline-block;
+  cursor: pointer;
+  a {
+    position: relative;
+    font-size: 2.5em;
+    padding: 0.25em;
+    padding-left: 0.2em;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1.5px;
+      bottom: 0px;
+      background-color: $primary;
+    }
+  }
+  img {
+    position: absolute;
+    width: 45em;
+    height: 24em;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 10;
+    top: -99999px;
+    left: -99999px;
+  }
+}

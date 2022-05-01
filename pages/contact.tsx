@@ -12,7 +12,7 @@ export async function getStaticProps({ locale }) {
   }
 }
 
-const Home: NextPage = () => {
+const ContactPage: NextPage = () => {
   const t1 = useTranslation('contact')
 
   return (
@@ -22,4 +22,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default ContactPage

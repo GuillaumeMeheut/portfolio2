@@ -1,3 +1,4 @@
+import { AnimatedText } from 'app/components/animatedText'
 import { useTranslation } from 'next-i18next'
 import { Earth } from './earth'
 import { Formulaire } from './formulaire'
@@ -10,7 +11,10 @@ export const Contact = ({}) => {
   return (
     <section className={css.section}>
       <div className={css.wrap}>
-        <h4 dangerouslySetInnerHTML={{ __html: t1.t('titlePage') }}></h4>
+        <div className={css.containerText}>
+          <AnimatedText text={t1.t('titlePage1')} />
+          <AnimatedText text={t1.t('titlePage2')} />
+        </div>
         <Earth />
       </div>
       <div className={css.wrap}>
