@@ -5,6 +5,7 @@ import { Layout } from 'app/components/layout'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
+import { InBuild } from 'app/components/inBuild'
 
 export async function getStaticProps({ locale }) {
   return {
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <motion.div ref={ref}>
+      <InBuild />
       <Layout title={t1.t('title')} keywords={t1.t('keywords')}>
         <Project changeColor={changeColor} />
       </Layout>
