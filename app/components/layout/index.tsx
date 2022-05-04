@@ -13,7 +13,7 @@ export const Layout = ({ children, title, keywords }: Props) => {
     <>
       <AppHead title={title} keywords={keywords} />
       <div className={css.layout}>
-        <Header />
+        <Header style={{ background: 'red' }} />
         {children}
       </div>
     </>

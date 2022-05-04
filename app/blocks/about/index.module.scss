@@ -4,9 +4,10 @@
   margin-left: 15em;
   margin-top: 5em;
 
+  height: 100%;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
 
   h4 {
@@ -23,15 +24,14 @@
   }
 
   .workingAt {
-    position: absolute;
-    bottom: 1.5em;
-
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: flex-end;
+    margin-top: auto;
 
     margin-right: 5em;
+    margin-bottom: 2.5em;
 
     p {
       font-size: 2em;

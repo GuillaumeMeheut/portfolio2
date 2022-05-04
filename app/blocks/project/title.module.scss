@@ -1,5 +1,9 @@
 @import '~config/index.module.scss';
 
 .title {
+  position: absolute;
+  width: 100%;
+  margin-top: 0.5em;
   font-size: 10em;
+  text-align: center;
 }

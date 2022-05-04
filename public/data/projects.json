@@ -1,5 +1,19 @@
 [
-  { "id": "01", "title": "Obonto", "type": "Prêt immobilier" },
-  { "id": "02", "title": "Scorpulting", "type": "Agence" },
+  {
+    "id": "01",
+    "title": "Obonto",
+    "type": "Prêt immobilier",
+    "imgPreview": "/assets/obonto1.jpg",
+    "colorBg": "#3D7360",
+    "colorText": "#DF693B"
+  },
+  {
+    "id": "02",
+    "title": "Scorpulting",
+    "type": "Agence",
+    "imgPreview": "/assets/scorpulting1.jpg",
+    "colorBg": "#3190A7",
+    "colorText": "#E41D30"
+  },
   { "id": "03", "title": "Title", "type": "Type" }
 ]

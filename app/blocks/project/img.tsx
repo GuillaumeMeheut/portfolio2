@@ -1,29 +1,32 @@
 import { motion } from 'framer-motion'
-import css from './type.module.scss'
+import css from './img.module.scss'
 
 const variants = {
   initial: {
     opacity: 0,
-    y: 700,
+    y: 1000,
   },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 2,
+      duration: 1.8,
       type: 'spring',
     },
   },
   exit: {
     opacity: 0,
-    y: -700,
-    duration: 1.5,
+    y: -300,
+    duration: 1.4,
   },
 }
 
-export const Type = ({ keyAnimate, type, wheeling, color }) => {
+export const Img = ({ imgSrc, alt, keyAnimate, wheeling }) => {
   return (
-    <motion.h5
+    <motion.img
+      className={css.img}
+      src={imgSrc}
+      alt={alt}
       key={keyAnimate}
       variants={variants}
       initial="initial"
@@ -32,10 +35,6 @@ export const Type = ({ keyAnimate, type, wheeling, color }) => {
       transition={{
         duration: 0.5,
       }}
-      className={css.type}
-      style={{ color }}
-    >
-      {type}
-    </motion.h5>
+    />
   )
 }

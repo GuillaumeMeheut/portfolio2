@@ -5,8 +5,10 @@ import Projects from 'public/data/projects.json'
 import React from 'react'
 import { Title } from './title'
 import { Type } from './type'
+import { Img } from './img'
+import { AnimatePresence, motion } from 'framer-motion'
 
-export const Project = () => {
+export const Project = ({ changeColor }) => {
   const ref = useRef(null)
 
   const [wheeling, setWheeling] = useState<number>(0)
@@ -43,8 +45,11 @@ export const Project = () => {
     }
   }
   const onChangeIndex = () => {
+    changeColor(Projects[index].colorBg)
     if (index !== 0) {
-      const roundedWheeling = Math.round(wheeling / 1000) * 1000
+      const roundedWheeling = Math.round(wheeling / 1001) * 1000 + 1
+      console.log(roundedWheeling)
+
       setWheeling(roundedWheeling)
       setAnimating(true)
       setTimeout(() => {
@@ -55,32 +60,57 @@ export const Project = () => {
 
   return (
     <section ref={ref} className={css.section}>
-      <Title
-        keyAnimate={'title' + index}
-        title={Projects[index].title}
-        wheeling={wheeling}
-      />
-      <Type
-        keyAnimate={'type' + index}
-        type={Projects[index].type}
-        wheeling={wheeling}
-      />
-      <Number
-        keyAnimate={'number' + index}
-        value={Projects[index].id}
-        wheeling={wheeling}
-      />
-      <Progress wheeling={wheeling} nbProjects={Projects.length} />
+      {Projects.map((project, i) => {
+        return (
+          <AnimatePresence key={project.id} exitBeforeEnter>
+            {i === index && (
+              <>
+                <Title
+                  keyAnimate={'title' + index}
+                  title={project.title}
+                  wheeling={wheeling}
+                  color={project.colorText}
+                />
+                <Type
+                  keyAnimate={'type' + index}
+                  type={project.type}
+                  wheeling={wheeling}
+                  color={project.colorText}
+                />
+                <Number
+                  keyAnimate={'number' + index}
+                  value={project.id}
+                  wheeling={wheeling}
+                  color={project.colorText}
+                />
+                <Img
+                  imgSrc={project.imgPreview}
+                  alt={project.title}
+                  keyAnimate={'img' + index}
+                  wheeling={wheeling}
+                />
+
+                <Progress
+                  wheeling={wheeling}
+                  nbProjects={Projects.length}
+                  color={project.colorText}
+                />
+              </>
+            )}
+          </AnimatePresence>
+        )
+      })}
     </section>
   )
 }
 
-const Progress = ({ wheeling, nbProjects }) => {
+const Progress = ({ wheeling, nbProjects, color }) => {
   return (
     <div
       className={css.progress}
       style={{
         transform: `scaleX(${(1 / 1000 / nbProjects) * wheeling})`,
+        background: color,
       }}
     />
   )

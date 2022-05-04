@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import css from './index.module.scss'
 import { useTranslation } from 'next-i18next'

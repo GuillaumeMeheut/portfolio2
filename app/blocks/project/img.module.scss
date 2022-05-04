@@ -1,0 +1,9 @@
+@import '~config/index.module.scss';
+
+.img {
+  position: absolute;
+  width: 80em;
+  left: 25em;
+  top: 20em;
+  z-index: 1;
+}
