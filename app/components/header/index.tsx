@@ -2,6 +2,8 @@ import { useRouter } from 'next/router'
 import css from './index.module.scss'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
 
 export const Header = () => {
   const router = useRouter()
@@ -11,23 +13,48 @@ export const Header = () => {
     <header className={css.header}>
       <h1>Guillaume Meheut</h1>
       <nav>
-        <Link href={'/'} passHref>
-          <a>{t1.t('project')}</a>
-        </Link>
-        <Link href={'/about'} passHref>
-          <a>{t1.t('about')}</a>
-        </Link>
-        <Link href={'/contact'} passHref>
-          <a>{t1.t('contact')}</a>
-        </Link>
+        <MyLink router={router} text={t1.t('project')} href={'/'} />
+        <MyLink router={router} text={t1.t('about')} href={'/about'} />
+        <MyLink router={router} text={t1.t('contact')} href={'/contact'} />
         <Link
           href={router.pathname}
           locale={t1.t('lang').toLowerCase()}
           passHref
         >
-          <a>{t1.t('lang')}</a>
+          <a className={css.lang}>{t1.t('lang')}</a>
         </Link>
       </nav>
     </header>
+  )
+}
+
+const MyLink = ({ router, text, href }) => {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <Link href={href} passHref>
+      <div
+        className={css.container}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <div className={css.containerLink}>
+          <a>{text}</a>
+          {router.pathname === href && (
+            <motion.div layoutId="underline" className={css.underline} />
+          )}
+          <AnimatePresence>
+            {hovered && (
+              <motion.div
+                layoutId="hovered"
+                initial={{ opacity: 0.2 }}
+                animate={{ opacity: 0.2 }}
+                exit={{ opacity: 0 }}
+                className={css.hovered}
+              />
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+    </Link>
   )
 }

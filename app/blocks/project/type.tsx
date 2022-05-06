@@ -14,24 +14,33 @@ const variants = {
       type: 'spring',
     },
   },
+  parallax: (wheeling) => {
+    return {
+      opacity: 1,
+      y: -(wheeling % 1000) / 10,
+      transition: {
+        duration: 0.1,
+      },
+    }
+  },
   exit: {
     opacity: 0,
     y: -700,
-    duration: 1.5,
+    transition: {
+      duration: 0.5,
+    },
   },
 }
 
-export const Type = ({ keyAnimate, type, wheeling, color }) => {
+export const Type = ({ keyAnimate, type, wheeling, color, animating }) => {
   return (
     <motion.h5
       key={keyAnimate}
       variants={variants}
       initial="initial"
-      animate="animate"
+      animate={animating ? 'animate' : 'parallax'}
       exit="exit"
-      transition={{
-        duration: 0.5,
-      }}
+      custom={wheeling}
       className={css.type}
       style={{ color }}
     >

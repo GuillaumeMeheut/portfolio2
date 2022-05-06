@@ -39,7 +39,7 @@ export const Project = ({ changeColor }) => {
       const newIndex = Math.floor(wheeling / 1000)
       if (newIndex !== index) {
         setIndex(newIndex)
-        return
+        // return
       }
       setWheeling(newWheeling)
     }
@@ -48,13 +48,14 @@ export const Project = ({ changeColor }) => {
     changeColor(Projects[index].colorBg)
     if (index !== 0) {
       const roundedWheeling = Math.round(wheeling / 1001) * 1000 + 1
-      console.log(roundedWheeling)
+
+      console.log(index)
 
       setWheeling(roundedWheeling)
       setAnimating(true)
       setTimeout(() => {
         setAnimating(false)
-      }, 2000)
+      }, 1000)
     }
   }
 
@@ -70,12 +71,14 @@ export const Project = ({ changeColor }) => {
                   title={project.title}
                   wheeling={wheeling}
                   color={project.colorText}
+                  animating={animating}
                 />
                 <Type
                   keyAnimate={'type' + index}
                   type={project.type}
                   wheeling={wheeling}
                   color={project.colorText}
+                  animating={animating}
                 />
                 <Number
                   keyAnimate={'number' + index}
@@ -88,6 +91,7 @@ export const Project = ({ changeColor }) => {
                   alt={project.title}
                   keyAnimate={'img' + index}
                   wheeling={wheeling}
+                  animating={animating}
                 />
 
                 <Progress
