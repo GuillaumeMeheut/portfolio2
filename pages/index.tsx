@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <motion.div ref={ref}>
-      {/* <InBuild /> */}
+      <InBuild />
       <Layout title={t1.t('title')} keywords={t1.t('keywords')}>
         <Project changeColor={changeColor} />
       </Layout>
