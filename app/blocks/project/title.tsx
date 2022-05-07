@@ -14,15 +14,6 @@ const variants = {
       type: 'spring',
     },
   },
-  parallax: (wheeling) => {
-    return {
-      opacity: 1,
-      y: -(wheeling % 1000) / 30,
-      transition: {
-        duration: 0.1,
-      },
-    }
-  },
   exit: {
     opacity: 0,
     y: -300,
@@ -32,17 +23,14 @@ const variants = {
   },
 }
 
-export const Title = ({ keyAnimate, title, wheeling, color, animating }) => {
-  console.log(`translateY(-${wheeling % 1000}px)`)
-
+export const Title = ({ keyAnimate, title, color }) => {
   return (
     <motion.h4
       key={keyAnimate}
       variants={variants}
       initial="initial"
-      animate={animating ? 'animate' : 'parallax'}
+      animate={'animate'}
       exit="exit"
-      custom={wheeling}
       className={css.title}
       style={{
         color,

@@ -69,16 +69,12 @@ export const Project = ({ changeColor }) => {
                 <Title
                   keyAnimate={'title' + index}
                   title={project.title}
-                  wheeling={wheeling}
                   color={project.colorText}
-                  animating={animating}
                 />
                 <Type
                   keyAnimate={'type' + index}
                   type={project.type}
-                  wheeling={wheeling}
                   color={project.colorText}
-                  animating={animating}
                 />
                 <Number
                   keyAnimate={'number' + index}
@@ -90,8 +86,6 @@ export const Project = ({ changeColor }) => {
                   imgSrc={project.imgPreview}
                   alt={project.title}
                   keyAnimate={'img' + index}
-                  wheeling={wheeling}
-                  animating={animating}
                 />
 
                 <Progress

@@ -14,15 +14,7 @@ const variants = {
       type: 'spring',
     },
   },
-  parallax: (wheeling) => {
-    return {
-      opacity: 1,
-      y: -(wheeling % 1000) / 30,
-      transition: {
-        duration: 0.1,
-      },
-    }
-  },
+
   exit: {
     opacity: 0,
     y: -300,
@@ -32,7 +24,7 @@ const variants = {
   },
 }
 
-export const Img = ({ imgSrc, alt, keyAnimate, wheeling, animating }) => {
+export const Img = ({ imgSrc, alt, keyAnimate }) => {
   return (
     <motion.img
       className={css.img}
@@ -41,9 +33,8 @@ export const Img = ({ imgSrc, alt, keyAnimate, wheeling, animating }) => {
       key={keyAnimate}
       variants={variants}
       initial="initial"
-      animate={animating ? 'animate' : 'parallax'}
+      animate={'animate'}
       exit="exit"
-      custom={wheeling}
     />
   )
 }
