@@ -28,8 +28,8 @@ const Home: NextPage = () => {
     <motion.div ref={ref}>
       {/* <InBuild /> */}
       <Layout title={t1.t('title')} keywords={t1.t('keywords')}>
-        {/* <Project changeColor={changeColor} /> */}
-        <div
+        <Project changeColor={changeColor} />
+        {/* <div
           style={{
             display: 'flex',
             justifyContent: 'center',
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
           }}
         >
           <p style={{ fontSize: '5em' }}>In build...</p>
-        </div>
+        </div> */}
       </Layout>
     </motion.div>
   )
