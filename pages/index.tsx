@@ -1,47 +1,25 @@
-import type { NextPage } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { Project } from 'app/blocks/project'
+import { About } from 'app/blocks/about'
 import { Layout } from 'app/components/layout'
+import type { NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
-import { motion } from 'framer-motion'
-import { useRef } from 'react'
-import { InBuild } from 'app/components/inBuild'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['header', 'projects'])),
+      ...(await serverSideTranslations(locale, ['header', 'about'])),
     },
   }
 }
 
-const Home: NextPage = () => {
-  const t1 = useTranslation('projects')
-
-  const ref = useRef(null)
-
-  const changeColor = (color) => {
-    ref.current.style.background = color
-  }
+const AboutPage: NextPage = () => {
+  const t1 = useTranslation('about')
 
   return (
-    <motion.div ref={ref}>
-      {/* <InBuild /> */}
-      <Layout title={t1.t('title')} keywords={t1.t('keywords')}>
-        {/* <Project changeColor={changeColor} /> */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-          }}
-        >
-          <p style={{ fontSize: '5em' }}>In build...</p>
-        </div>
-      </Layout>
-    </motion.div>
+    <Layout title={t1.t('title')} keywords={t1.t('keywords')}>
+      <About />
+    </Layout>
   )
 }
 
-export default Home
+export default AboutPage

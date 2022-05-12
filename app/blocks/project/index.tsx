@@ -13,7 +13,7 @@ export const Project = ({ changeColor }) => {
 
   const [wheeling, setWheeling] = useState<number>(0)
   const [scrollDown, setScrollDown] = useState<boolean>(true)
-  const [index, setIndex] = useState<number>(0)
+  const [index, setIndex] = useState<number>(1)
   const [animating, setAnimating] = useState<boolean>(false)
 
   useEffect(() => {
@@ -31,40 +31,33 @@ export const Project = ({ changeColor }) => {
 
   const onWheeling = (e) => {
     const newWheeling = wheeling + e.deltaY
-    if (
-      newWheeling >= 0 &&
-      newWheeling < Projects.length * 1000 &&
-      !animating
-    ) {
-      const newIndex = Math.floor(wheeling / 1000)
-      if (newIndex !== index) {
-        setIndex(newIndex)
-        // return
-      }
-      setWheeling(newWheeling)
+
+    if (newWheeling < 0 || newWheeling > (Projects.length + 1) * 1000) return
+
+    if (wheeling % 1000 > index * 1000) setIndex(index + 1)
+    else if (wheeling % 1000 < index * 1000) {
+      // setIndex(index - 1)
+      console.log('proc')
     }
+    setWheeling(newWheeling)
   }
+
   const onChangeIndex = () => {
-    changeColor(Projects[index].colorBg)
-    if (index !== 0) {
-      const roundedWheeling = Math.round(wheeling / 1001) * 1000 + 1
-
-      console.log(index)
-
-      setWheeling(roundedWheeling)
-      setAnimating(true)
-      setTimeout(() => {
-        setAnimating(false)
-      }, 1000)
-    }
+    // changeColor(Projects[index - 1].colorBg)
+    setAnimating(true)
+    setTimeout(() => {
+      setAnimating(false)
+    }, 1000)
   }
+
+  console.log(index)
 
   return (
     <section ref={ref} className={css.section}>
       {Projects.map((project, i) => {
         return (
           <AnimatePresence key={project.id} exitBeforeEnter>
-            {i === index && (
+            {i === index - 1 && (
               <>
                 <Title
                   keyAnimate={'title' + index}
