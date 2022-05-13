@@ -12,6 +12,7 @@
     "@react-three/drei": "^9.5.4",
     "@react-three/fiber": "^8.0.12",
     "framer-motion": "^6.2.10",
+    "framer-motion-3d": "^6.3.3",
     "next": "12.1.5",
     "next-i18next": "^11.0.0",
     "nodemailer": "^6.7.4",

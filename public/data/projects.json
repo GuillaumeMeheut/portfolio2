@@ -14,6 +14,5 @@
     "imgPreview": "/assets/scorpulting1.jpg",
     "colorBg": "#3190A7",
     "colorText": "#E41D30"
-  },
-  { "id": "03", "title": "Title", "type": "Type" }
+  }
 ]

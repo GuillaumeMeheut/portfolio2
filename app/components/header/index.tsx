@@ -13,8 +13,8 @@ export const Header = () => {
     <header className={css.header}>
       <h1>Guillaume Meheut</h1>
       <nav>
-        <MyLink router={router} text={t1.t('project')} href={'/'} />
-        <MyLink router={router} text={t1.t('about')} href={'/about'} />
+        <MyLink router={router} text={t1.t('about')} href={'/'} />
+        <MyLink router={router} text={t1.t('project')} href={'/projects'} />
         <MyLink router={router} text={t1.t('contact')} href={'/contact'} />
         <Link
           href={router.pathname}
