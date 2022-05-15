@@ -5,7 +5,7 @@ import css from './index.module.scss'
 type Props = {
   children: any
   title: string
-  keywords: string
+  keywords?: string
 }
 
 export const Layout = ({ children, title, keywords }: Props) => {

@@ -45,11 +45,6 @@ export const Description = ({}) => {
               __html: t1.t('text1'),
             }}
           />
-          <ImgText
-            text={'Next.js.'}
-            imgSrc={'/assets/nextjs.jpg'}
-            link={'https://nextjs.org/'}
-          />
         </motion.div>
         <motion.span
           variants={variantsBorder}
