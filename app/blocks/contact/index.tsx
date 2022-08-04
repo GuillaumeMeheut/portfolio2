@@ -1,6 +1,7 @@
 import { AnimatedText } from 'app/components/animatedText'
 import { useTranslation } from 'next-i18next'
-import { Earth } from './earth'
+import React from 'react'
+import Earth from './earth'
 import { Formulaire } from './formulaire'
 import css from './index.module.scss'
 import { Informations } from './informations'

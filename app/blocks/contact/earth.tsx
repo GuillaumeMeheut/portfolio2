@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 
-export const Earth = ({}) => {
+const Earth = () => {
   const [grabbing, setGrabbing] = useState<boolean>(false)
   return (
     <NoSSR>
@@ -36,7 +36,8 @@ export const Earth = ({}) => {
   )
 }
 
-export default function Model({ ...props }) {
+export default Earth
+const Model = ({ ...props }) => {
   const group = useRef(null)
   //@ts-ignore
   const { nodes, materials } = useGLTF('/assets/earth.gltf')

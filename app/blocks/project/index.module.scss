@@ -1,29 +1,36 @@
 @import '~config/index.module.scss';
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  margin: 5em 15em;
-
-  .textContainer {
+  margin: 3em 3em;
+  .header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    font-size: 16px;
+    font-weight: lighter;
 
-    margin-bottom: 1.5em;
+    .back {
+      position: relative;
+      padding-left: 25px;
+      transition: 0.6s;
 
-    h5,
-    h6 {
-      text-transform: uppercase;
-      font-weight: 300;
-      font-size: 4.5em;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 9px;
+        width: 20px;
+        height: 0.1px;
+        opacity: 0.7;
+        background-color: $primary;
+        transition: 0.6s;
+      }
+
+      &:hover {
+        padding-left: 60px;
+        &::before {
+          width: 50px;
+        }
+      }
     }
-  }
-
-  img {
-    margin-bottom: 1.5em;
   }
 }

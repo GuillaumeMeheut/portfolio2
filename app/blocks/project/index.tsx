@@ -1,3 +1,6 @@
+import { useTranslation } from 'next-i18next'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { ProjectProps } from 'utils/projects'
 import css from './index.module.scss'
 
@@ -6,15 +9,22 @@ type Props = {
 }
 
 export const Project = ({ project }: Props) => {
+  const router = useRouter()
+  const t1 = useTranslation('header')
   return (
     <section className={css.container}>
-      <div className={css.textContainer}>
-        <h5>{project.title}</h5>
-        <h6>{project.type}</h6>
+      <div className={css.header}>
+        <Link href={'/projects'} passHref>
+          <a className={css.back}>{t1.t('back')}</a>
+        </Link>
+        <Link href={router.asPath} locale={t1.t('lang').toLowerCase()} passHref>
+          <a className={css.lang}>{t1.t('lang')}</a>
+        </Link>
       </div>
-      {project.imgsUrl.map((url, index) => (
-        <img src={url} alt={'image ' + index} />
-      ))}
+
+      {/* <div className={css.textContainer}>
+        <h5>{project.title}</h5>
+      </div> */}
     </section>
   )
 }

@@ -1,9 +1,59 @@
 @import '~config/index.module.scss';
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .section {
   height: 100%;
-  margin: 5em 15em;
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  color: $primary;
+
+  pointer-events: none;
+  top: -9999px;
+  left: -9999px;
+  z-index: 100;
+
+  transform: scale(1);
+  transition-duration: 700ms;
+  transition-property: transform;
+
+  div {
+    transition-duration: 100ms;
+    transition-property: transform;
+  }
+
+  svg {
+    animation: spin 4s infinite linear;
+  }
 }
 
 .projectContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  li {
+    width: 95%;
+    margin-bottom: 20px;
+
+    .projectImg {
+      width: 100%;
+      img {
+        border-radius: 5px;
+      }
+      @include mobile {
+      }
+    }
+  }
 }

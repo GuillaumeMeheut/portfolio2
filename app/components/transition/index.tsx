@@ -5,9 +5,7 @@ const variants = {
   initial: {
     opacity: 1,
   },
-  animate: {
-    opacity: 0,
-  },
+  animate: { opacity: 0 },
   exit: {
     opacity: 0,
   },
@@ -24,7 +22,7 @@ export const Transition = ({ Key }) => {
         animate="animate"
         exit="exit"
         transition={{
-          duration: 0.5,
+          duration: 1,
         }}
       />
     </AnimatePresence>

@@ -35,7 +35,7 @@ export const Formulaire = ({}) => {
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
       newMail.valid = false
       newMail.error = t1.t('errorEmailInvalid')
-    } else if (step === 2) {
+    } else {
       newMail.valid = true
       newMail.error = ''
       setStep(step + 1)
@@ -123,6 +123,7 @@ export const Formulaire = ({}) => {
           error={mail.error}
           onChange={(e) => {
             verifyMail(e.target.value)
+            console.log('test')
           }}
           t1={t1}
         />

@@ -1,8 +1,7 @@
 @import '~config/index.module.scss';
 
 .section {
-  margin-left: 15em;
-  margin-top: 5em;
+  margin-left: 120px;
 
   height: 100%;
 
@@ -10,9 +9,14 @@
   flex-direction: column;
   align-items: flex-start;
 
+  @include mobile {
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+
   h4 {
-    font-size: 8em;
-    margin-bottom: 0.8em;
+    font-size: 60px;
+    margin-bottom: 50px;
   }
 
   p {
@@ -30,16 +34,16 @@
     align-self: flex-end;
     margin-top: auto;
 
-    margin-right: 5em;
-    margin-bottom: 2.5em;
+    margin-right: 50px;
+    margin-bottom: 20px;
 
     p {
-      font-size: 2em;
+      font-size: 20px;
     }
 
     img {
-      margin-left: 1em;
-      width: 2.5em;
+      margin-left: 10px;
+      width: 30px;
     }
   }
 }

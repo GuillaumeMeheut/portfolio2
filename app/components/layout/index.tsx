@@ -1,5 +1,5 @@
 import { AppHead } from '../head'
-import { Header } from '../header'
+import { Header } from './header'
 import css from './index.module.scss'
 
 type Props = {
