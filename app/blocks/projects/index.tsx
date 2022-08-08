@@ -1,5 +1,5 @@
 import css from './index.module.scss'
-import { ProjectProps } from 'utils/projects'
+import { ProjectProps } from 'utils/types'
 import { AppImage } from 'app/components/image'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
@@ -88,12 +88,13 @@ export const Projects = ({ projectsData }: Props) => {
             >
               <Link href={`/project/${project.id}`} passHref>
                 <a>
-                  <AppImage
+                  {/* <AppImage
                     src={project.imgIntro}
                     alt={'img'}
                     priority={index === 0 ? true : false}
                     className={css.projectImg}
-                  />
+                  /> */}
+                  <img src="/assets/doublecard0.png" alt="" />
                 </a>
               </Link>
             </motion.li>

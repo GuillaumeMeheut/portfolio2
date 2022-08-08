@@ -2,7 +2,8 @@ import { Project } from 'app/blocks/project'
 import { Layout } from 'app/components/layout'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { data, ProjectProps } from 'utils/projects'
+import { data } from 'public/projects'
+import { ProjectProps } from 'utils/types'
 
 export async function getStaticPaths({ locales }) {
   const paths = data

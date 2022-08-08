@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { ProjectProps } from 'utils/projects'
+import { ProjectProps } from 'utils/types'
 import css from './index.module.scss'
 
 type Props = {
