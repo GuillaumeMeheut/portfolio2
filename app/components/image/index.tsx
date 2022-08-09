@@ -9,6 +9,7 @@ type Props = {
   priority?: boolean
   objectPos?: string
   className?: string
+  rest?: any
 }
 
 export const AppImage = ({
@@ -19,9 +20,10 @@ export const AppImage = ({
   priority,
   objectPos,
   className,
+  rest,
 }: Props) => {
   return (
-    <div className={(css.imgContainer, className)}>
+    <div className={[css.imgContainer, className].join(' ')} {...rest}>
       <Image
         src={src}
         alt={alt}
