@@ -7,11 +7,7 @@ export const PointLightMouse = () => {
 
   const cursor = useRef({ x: 0, y: 0 })
 
-  useFrame(({ mouse }) => {
-    // const x = (mouse.x * viewport.width) / 2
-    // const y = (mouse.y * viewport.height) / 2
-    // const x = (cursor.current.x * viewport.width) / 2
-    // const y = (cursor.current.y * viewport.height) / 2
+  useFrame(() => {
     const x = cursor.current.x
     const y = cursor.current.y
     light.current.position.set(x, y, 0.05)

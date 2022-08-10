@@ -27,6 +27,7 @@ const Background = forwardRef((props, ref: any) => {
             )
           })} */}
           <PointLightMouse />
+
           <mesh scale={[15, 10, 1]}>
             <planeBufferGeometry />
             <meshPhongMaterial />
