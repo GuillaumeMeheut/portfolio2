@@ -37,6 +37,7 @@ const Earth = () => {
 }
 
 export default Earth
+
 const Model = ({ ...props }) => {
   const group = useRef(null)
   //@ts-ignore

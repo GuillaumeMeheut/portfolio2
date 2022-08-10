@@ -1,23 +1,5 @@
-import { StaticImageData } from 'next/image'
-import DoublecardIntroImg from 'public/assets/doublecard0.png'
-
-type ImgsDetail = {
-  img: string | StaticImageData
-  caption: string
-  desc?: string
-}
-
-export type ProjectProps = {
-  id: number
-  viewColor: string
-  title: string
-  imgIntro: string | StaticImageData
-  linkWebsite?: string
-  linkGithub?: string
-  stacks: string[]
-  intro: string
-  imgs: ImgsDetail[]
-}
+import { ProjectProps } from 'utils/types'
+import DoublecardIntroImg from './assets/doublecard0.png'
 
 export const data: ProjectProps[] = [
   {

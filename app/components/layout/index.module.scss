@@ -1,7 +1,8 @@
 @import '~config/index.module.scss';
 
 .layout {
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }

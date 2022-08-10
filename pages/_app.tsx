@@ -2,7 +2,6 @@ import type { AppProps } from 'next/app'
 import './_app.scss'
 import { Transition } from 'app/components/transition'
 import { appWithTranslation } from 'next-i18next'
-
 import { useEffect } from 'react'
 import { isMobile } from 'utils/isMobile'
 import style from 'config/index.module.scss'

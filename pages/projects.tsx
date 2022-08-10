@@ -3,8 +3,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Projects } from 'app/blocks/projects'
 import { Layout } from 'app/components/layout'
 import { useTranslation } from 'next-i18next'
-import { motion } from 'framer-motion'
-import { data, ProjectProps } from 'utils/projects'
+import { ProjectProps } from 'utils/types'
+import { data } from 'public/projects'
+import Background from 'app/components/background'
 
 export async function getStaticProps({ locale }) {
   return {
@@ -23,11 +24,9 @@ const ProjectsPage: NextPage = ({ projectsData }: Props) => {
   const t1 = useTranslation('projects')
 
   return (
-    <motion.div>
-      <Layout title={t1.t('title')} keywords={t1.t('keywords')}>
-        <Projects projectsData={projectsData} />
-      </Layout>
-    </motion.div>
+    <Layout title={t1.t('title')} keywords={t1.t('keywords')}>
+      <Projects projectsData={projectsData} />
+    </Layout>
   )
 }
 
