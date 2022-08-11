@@ -21,6 +21,7 @@ type Props = {
   classname?: string
   isVisible: boolean
   delay: number
+  backgroundColor?: string
 }
 
 export const AnimatedTextBand = ({
@@ -28,13 +29,14 @@ export const AnimatedTextBand = ({
   classname,
   isVisible,
   delay,
+  backgroundColor = 'black',
 }: Props) => {
   return (
     <div className={[css.textContainer, classname].join(' ')}>
       {text}
       <motion.div
         className={css.band}
-        style={{ originX: 1 }}
+        style={{ originX: 1, backgroundColor }}
         variants={variants}
         custom={delay}
         animate={isVisible ? 'animate' : 'initial'}

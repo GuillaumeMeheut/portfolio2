@@ -10,7 +10,7 @@ export const Contact = ({}) => {
   const t1 = useTranslation('contact')
 
   return (
-    <section className={css.section}>
+    <section id="contact" className={css.section}>
       <div className={css.wrap}>
         <div className={css.containerText}>
           <AnimatedText text={t1.t('titlePage1')} />

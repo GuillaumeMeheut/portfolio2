@@ -3,6 +3,7 @@
 .section {
   height: 100%;
   width: 100%;
+  padding: 50em 0 50em;
 }
 
 .projectsContainer {
@@ -22,6 +23,11 @@
       width: 100%;
       img {
         border-radius: 5px;
+        transform: scale(1) rotate(0deg);
+        transition: transform 0.3s;
+        &:hover {
+          transform: scale(1.05) rotate(1deg);
+        }
       }
     }
 

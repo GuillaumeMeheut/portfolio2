@@ -7,7 +7,7 @@ export const About = ({}) => {
   const t1 = useTranslation('about')
 
   return (
-    <section className={css.section}>
+    <section id="about" className={css.section}>
       <AnimatedText text={t1.t('titlePage')} />
 
       <Description />

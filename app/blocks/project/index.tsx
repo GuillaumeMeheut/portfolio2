@@ -14,7 +14,7 @@ export const Project = ({ project }: Props) => {
   return (
     <section className={css.container}>
       <div className={css.header}>
-        <Link href={'/projects'} passHref>
+        <Link href={'/'} passHref>
           <a className={css.back}>{t1.t('back')}</a>
         </Link>
         <Link href={router.asPath} locale={t1.t('lang').toLowerCase()} passHref>

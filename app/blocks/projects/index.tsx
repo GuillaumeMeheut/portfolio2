@@ -16,12 +16,10 @@ export const Projects = ({ projectsData }: Props) => {
   const t1 = useTranslation('projects')
 
   return (
-    <section className={css.section}>
+    <section id="projects" className={css.section}>
       <ul className={css.projectsContainer}>
         {projectsData.map((project, index) => {
-          return (
-            <ProjectCard key={project.id} project={project} index={index} />
-          )
+          return <ProjectCard key={project.id} project={project} />
         })}
       </ul>
     </section>
@@ -30,10 +28,9 @@ export const Projects = ({ projectsData }: Props) => {
 
 type CardProjectProps = {
   project: ProjectProps
-  index: number
 }
 
-const ProjectCard = ({ project, index }: CardProjectProps) => {
+const ProjectCard = ({ project }: CardProjectProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
 
   return (
@@ -46,15 +43,14 @@ const ProjectCard = ({ project, index }: CardProjectProps) => {
             widthImg={1920}
             heightImg={1080}
             alt={'img'}
-            priority={index === 0 ? true : false}
             className={css.projectImg}
           />
-          {/* <img src="/assets/doublecard0.png" alt="" /> */}
         </a>
       </Link>
       <motion.div
         className={css.captionContainer}
         onViewportEnter={() => setIsVisible(true)}
+        onViewportLeave={() => setIsVisible(false)}
       >
         <AnimatedTextBand
           text="Doublecard"

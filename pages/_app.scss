@@ -1,6 +1,10 @@
 @import 'config/reset.css';
 @import 'config/index.module.scss';
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   background: $black;
