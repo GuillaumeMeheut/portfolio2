@@ -18,11 +18,7 @@ export const Header = () => {
             <MyLink router={router} text={t1.t('about')} href={'#about'} />
             <MyLink router={router} text={t1.t('project')} href={'#projects'} />
             <MyLink router={router} text={t1.t('contact')} href={'#contact'} />
-            <Link
-              href={router.asPath}
-              locale={t1.t('lang').toLowerCase()}
-              passHref
-            >
+            <Link href={'/'} locale={t1.t('lang').toLowerCase()} passHref>
               <a className={css.lang}>{t1.t('lang')}</a>
             </Link>
           </nav>

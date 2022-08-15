@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
-import React, { useEffect, useRef, useState } from 'react'
 import css from './description.module.scss'
 
 const variantsBorder = {
@@ -95,57 +94,6 @@ export const Description = ({}) => {
           custom={0.5}
         />
       </div>
-    </div>
-  )
-}
-
-const ImgText = ({ text, imgSrc, link }) => {
-  const _container = useRef(null)
-  const _img = useRef(null)
-  const [dimensions, setDimensions] = useState(null)
-
-  useEffect(() => {
-    if (_container && dimensions) {
-      const container = _container.current
-      container.addEventListener('mousemove', inImg)
-      container.addEventListener('mouseleave', outImg)
-
-      return () => {
-        container.removeEventListener('mousemove', inImg)
-        container.removeEventListener('mouseleave', outImg)
-      }
-    }
-  }, [_container, dimensions])
-
-  useEffect(() => {
-    setDimensions({ width: _img.current.width, height: _img.current.height })
-  }, [_img])
-
-  const inImg = (e) => {
-    const img = _img.current
-
-    img.style.display = 'block'
-    img.style.opacity = 1
-    img.style.top = e.pageY - dimensions.height / 2 + 'px'
-    img.style.left = e.pageX - dimensions.width / 2 + 'px'
-  }
-
-  const outImg = () => {
-    const img = _img.current
-    img.style.opacity = 0
-    img.style.top = '-99999px'
-    img.style.left = '-99999px'
-    setTimeout(() => {
-      img.style.display = 'none'
-    }, 300)
-  }
-
-  return (
-    <div ref={_container} className={css.containerImgText}>
-      <a href={link} target="_blank">
-        {text}
-      </a>
-      <img ref={_img} src={imgSrc} alt={text} />
     </div>
   )
 }

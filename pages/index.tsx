@@ -30,7 +30,7 @@ const ProjectsPage: NextPage = ({ projectsData }: Props) => {
   const t1 = useTranslation('projects')
 
   return (
-    <Layout title={t1.t('title')} keywords={t1.t('keywords')}>
+    <Layout title={t1.t('title')} keywords={t1.t('keywords')} bg>
       <About />
       <Projects projectsData={projectsData} />
       <Contact />

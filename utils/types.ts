@@ -1,16 +1,14 @@
-import { StaticImageData } from 'next/image'
-
 type ImgsDetail = {
-  img: string | StaticImageData
+  src: string
+  alt: string
   caption: string
-  desc?: string
 }
 
 export type ProjectProps = {
   id: number
   viewColor: string
   title: string
-  imgIntro: string | StaticImageData
+  imgIntro: string
   linkWebsite?: string
   linkGithub?: string
   stacks: string[]

@@ -8,9 +8,10 @@ type Props = {
   children: any
   title: string
   keywords?: string
+  bg?: boolean
 }
 
-export const Layout = ({ children, title, keywords }: Props) => {
+export const Layout = ({ children, title, keywords, bg = false }: Props) => {
   const ref = useRef(null)
   return (
     <>
@@ -18,7 +19,7 @@ export const Layout = ({ children, title, keywords }: Props) => {
       <div ref={ref} className={css.layout}>
         <Header />
         {children}
-        <Background ref={ref} />
+        {bg && <Background ref={ref} />}
       </div>
     </>
   )

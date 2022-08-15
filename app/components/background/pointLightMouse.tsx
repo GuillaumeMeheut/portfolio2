@@ -42,5 +42,5 @@ export const PointLightMouse = () => {
     }
   }, [])
 
-  return <pointLight ref={light} color="white" intensity={1.4} />
+  return <pointLight ref={light} color="blue" intensity={1.5} />
 }
