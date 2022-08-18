@@ -32,8 +32,8 @@ export const PointLightMouse = () => {
 
   useEffect(() => {
     if (light && light.current) {
-      window.addEventListener('mousemove', onMove)
-      window.addEventListener('scroll', onScroll)
+      window.addEventListener('mousemove', onMove, { passive: true })
+      window.addEventListener('scroll', onScroll, { passive: true })
 
       return () => {
         window.removeEventListener('mousemove', onMove)

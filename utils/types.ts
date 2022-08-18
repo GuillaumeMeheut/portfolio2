@@ -9,6 +9,7 @@ export type ProjectProps = {
   viewColor: string
   title: string
   imgIntro: string
+  imgHeader: string
   linkWebsite?: string
   linkGithub?: string
   stacks: string[]

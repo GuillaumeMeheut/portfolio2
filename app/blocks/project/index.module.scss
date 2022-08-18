@@ -1,7 +1,7 @@
 @import '~config/index.module.scss';
 
 .container {
-  .imgIntro {
+  .imgHeader {
     width: 100vw;
     height: clamp(60vw, 60vw, 1300px);
     position: fixed;
@@ -18,18 +18,108 @@
 
     position: relative;
     background: $black;
-    min-height: 200vh;
     margin-top: clamp(60vw, 60vw, 1300px);
 
-    padding: 10em;
+    padding: 5em 10em;
+
+    .presentationContainer {
+      width: 75em;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .title {
       font-size: 5em;
     }
 
-    .stacks {
-      li {
-        list-style: disc;
+    h5 {
+      font-size: 3.2em;
+      font-weight: 300;
+    }
+
+    .linksContainer {
+      display: flex;
+      gap: 10em;
+      margin-top: 5em;
+      a {
+        font-size: 2.5em;
+        font-weight: 300;
+        position: relative;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+        &:hover {
+          opacity: 1;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          background-image: url(../../../public/assets/link_ext.svg);
+          background-position: center;
+          background-size: 0.7em;
+          width: 0.7em;
+          height: 0.7em;
+          top: 0.25em;
+          right: -1em;
+        }
+      }
+    }
+    .sectionStacks {
+      margin-top: 15em;
+      margin-bottom: 15em;
+      align-self: flex-start;
+      .stacks {
+        margin-left: 5em;
+
+        li {
+          font-size: 2em;
+          list-style: disc;
+          font-weight: 300;
+          opacity: 0.7;
+          transition: opacity 0.3s;
+          &:hover {
+            opacity: 1;
+          }
+
+          &:nth-child(1) {
+            margin-top: 2em;
+          }
+        }
+      }
+    }
+
+    .sectionPresentation {
+      align-self: flex-start;
+
+      margin-bottom: 10em;
+
+      p {
+        font-weight: 300;
+      }
+    }
+
+    .imgsContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 7.5em;
+
+      figure {
+        width: 80em;
+        align-self: flex-start;
+
+        &:nth-child(2n) {
+          align-self: flex-end;
+        }
+      }
+
+      figcaption {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.6em;
+        font-weight: 200;
       }
     }
   }

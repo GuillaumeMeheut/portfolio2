@@ -6,6 +6,7 @@ export const data: ProjectProps[] = [
     viewColor: 'white',
     title: 'Doublecard',
     imgIntro: '/assets/doublecard0.png',
+    imgHeader: '/assets/doublecard0.png',
     linkWebsite: 'https://doublecard.vercel.app/',
     linkGithub: 'https://github.com/GuillaumeMeheut/doublecard',
     stacks: ['NextJs', 'Firebase', 'Typescript', 'Chakra UI', 'Framer Motion'],
@@ -33,6 +34,7 @@ export const data: ProjectProps[] = [
     viewColor: 'black',
     title: 'Scorpulting',
     imgIntro: '/assets/doublecard0.png',
+    imgHeader: '/assets/doublecard0.png',
     linkWebsite: 'https://doublecard.vercel.app/',
     stacks: [
       'NextJs',
