@@ -38,8 +38,7 @@ const ProjectCard = ({ project }: CardProjectProps) => {
       <Link href={`/project/${project.id}`} passHref>
         <a>
           <AppImage
-            // src={project.imgIntro}
-            src="/assets/doublecard0.png"
+            src={project.imgIntro}
             widthImg={1920}
             heightImg={1080}
             alt={'img'}
@@ -71,7 +70,15 @@ const ProjectCard = ({ project }: CardProjectProps) => {
             isVisible={isVisible}
             delay={0.3}
           />
-          <AppImage src={Arrow} alt={'arrow down right'} className={css.img} />
+          <Link href={`/project/${project.id}`} passHref>
+            <a>
+              <AppImage
+                src={Arrow}
+                alt={'arrow down right'}
+                className={css.img}
+              />
+            </a>
+          </Link>
         </div>
       </motion.div>
     </li>

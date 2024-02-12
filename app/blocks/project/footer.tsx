@@ -7,5 +7,11 @@ export const ProjectFooter = () => {
   const router = useRouter()
   const t1 = useTranslation('projects')
 
-  return <footer className={css.footer}></footer>
+  return (
+    <footer className={css.footer}>
+      <Link href={'/#projects'} passHref>
+        <a>See other projects</a>
+      </Link>
+    </footer>
+  )
 }

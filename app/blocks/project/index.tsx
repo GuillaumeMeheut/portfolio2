@@ -23,7 +23,7 @@ export const Project = ({ project }: Props) => {
         <AppImage
           src={project.imgHeader}
           alt="img"
-          widthImg={1920}
+          widthImg={1600}
           heightImg={1080}
           className={css.imgHeader}
           priority
