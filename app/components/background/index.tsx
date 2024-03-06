@@ -1,7 +1,7 @@
 import css from './index.module.scss'
 import NoSSR from '../../components/no-ssr'
 import { Canvas } from '@react-three/fiber'
-import { forwardRef, useEffect, useRef, useState } from 'react'
+import { forwardRef, useRef } from 'react'
 import { PointLightMouse } from './pointLightMouse'
 
 const Background = forwardRef((props, ref: any) => {
@@ -14,8 +14,6 @@ const Background = forwardRef((props, ref: any) => {
           ref={canvas}
           onCreated={({ events }) => events.connect(ref.current)}
         >
-          <ambientLight color="black" intensity={0.3} />
-
           <PointLightMouse />
 
           <mesh scale={[15, 10, 1]}>

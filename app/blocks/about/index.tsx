@@ -3,7 +3,7 @@ import css from './index.module.scss'
 import { Description } from './description'
 import { AnimatedText } from 'app/components/animatedText'
 import { AppImage } from 'app/components/image'
-import TBWALogo from '../../../public/assets/tbwa.svg'
+import ForstaLogo from '../../../public/assets/Forsta_Symbol_RGB_Navy.webp'
 
 export const About = ({}) => {
   const t1 = useTranslation('about')
@@ -16,7 +16,7 @@ export const About = ({}) => {
 
       <footer className={css.workingAt}>
         <p dangerouslySetInnerHTML={{ __html: t1.t('workingAt') }} />
-        <AppImage src={TBWALogo} alt="TBWA logo" className={css.logo} />
+        <AppImage src={ForstaLogo} alt="Forsta logo" className={css.logo} />
       </footer>
     </section>
   )

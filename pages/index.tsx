@@ -14,6 +14,7 @@ export async function getStaticProps({ locale }) {
       projectsData: data,
       ...(await serverSideTranslations(locale, [
         'header',
+        'common',
         'projects',
         'contact',
         'about',

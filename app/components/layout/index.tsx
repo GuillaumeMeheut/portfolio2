@@ -3,6 +3,7 @@ import Background from '../background'
 import { AppHead } from '../head'
 import { Header } from './header'
 import css from './index.module.scss'
+import InProgress from '../inProgress'
 
 type Props = {
   children: any
@@ -20,6 +21,7 @@ export const Layout = ({ children, title, keywords, bg = false }: Props) => {
         <Header />
         {children}
         {bg && <Background ref={ref} />}
+        <InProgress />
       </div>
     </>
   )
