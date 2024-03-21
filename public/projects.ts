@@ -7,7 +7,7 @@ export const data: ProjectProps[] = [
     imgIntro: '/assets/doublecard0.png',
     smallIntro: 'doublecard_small_intro',
     type: 'perso',
-    imgHeader: '/assets/doublecard_header.jpg',
+    imgHeader: '/assets/doublecard_header.svg',
     linkWebsite: 'https://doublecard.vercel.app/',
     linkGithub: 'https://github.com/GuillaumeMeheut/doublecard',
     stacks: ['NextJs', 'Firebase', 'Typescript', 'Chakra UI', 'Framer Motion'],
@@ -19,7 +19,7 @@ export const data: ProjectProps[] = [
         caption: 'doublecard_caption_login_page',
       },
       {
-        src: '/assets/doublecard_create_lobby',
+        src: '/assets/doublecard_create_lobby.png',
         alt: '',
         caption: 'doublecard_caption_login_page',
       },
@@ -43,7 +43,7 @@ export const data: ProjectProps[] = [
     intro: 'fraktree_intro',
     imgs: [
       {
-        src: '/assets/tree_generation.png',
+        src: '/assets/tree_generation.jpg',
         alt: '',
         caption: 'fraktree_caption_generation',
       },

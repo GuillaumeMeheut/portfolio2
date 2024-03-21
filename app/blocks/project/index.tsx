@@ -68,7 +68,6 @@ export const Project = ({ project }: Props) => {
                   alt={img.alt}
                   widthImg={1600}
                   heightImg={900}
-                  objectFit="contain"
                 />
                 <figcaption>{t1.t(img.caption)}</figcaption>
               </figure>
