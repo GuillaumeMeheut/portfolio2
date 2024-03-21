@@ -40,8 +40,8 @@ const ProjectCard = ({ project }: CardProjectProps) => {
         <a>
           <AppImage
             src={project.imgIntro}
-            widthImg={1920}
-            heightImg={1080}
+            widthImg={1600}
+            heightImg={900}
             alt={'img'}
             className={css.projectImg}
           />

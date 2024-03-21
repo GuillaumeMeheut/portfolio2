@@ -33,7 +33,7 @@ export const data: ProjectProps[] = [
   {
     id: 2,
     title: 'FrakTree',
-    imgIntro: '/assets/tree_website.png',
+    imgIntro: '/assets/tree_intro.jpg',
     smallIntro: 'fraktree_small_intro',
     type: 'perso',
     imgHeader: '/assets/trees.png',

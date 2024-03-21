@@ -36,6 +36,7 @@ export const AppImage = ({
         width={widthImg}
         height={heightImg}
         layout="responsive"
+        quality={100}
         priority={priority}
         objectFit={objectFit}
         objectPosition={objectPos}
