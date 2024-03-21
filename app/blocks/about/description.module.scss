@@ -5,7 +5,7 @@
   width: min(80%, 1300px);
   .border {
     display: inline-block;
-    margin-bottom: 60px;
+    margin-bottom: 6em;
     width: 100%;
 
     span {
@@ -15,7 +15,7 @@
       background: $primary;
       transition: width 0.3s;
 
-      margin-top: 40px;
+      margin-top: 4em;
     }
   }
 
@@ -25,7 +25,7 @@
     align-items: center;
 
     p {
-      font-size: 24px;
+      font-size: 2.5em;
     }
   }
 }
