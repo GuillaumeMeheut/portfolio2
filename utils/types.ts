@@ -6,9 +6,10 @@ type ImgsDetail = {
 
 export type ProjectProps = {
   id: number
-  viewColor: string
   title: string
   imgIntro: string
+  smallIntro: string
+  type: 'perso' | 'professional'
   imgHeader: string
   linkWebsite?: string
   linkGithub?: string

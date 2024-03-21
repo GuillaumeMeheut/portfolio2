@@ -12,21 +12,21 @@ type Props = {
 }
 
 export const Project = ({ project }: Props) => {
-  const t1 = useTranslation('header')
-  const t2 = useTranslation('project')
+  const t1 = useTranslation('project')
 
   return (
     <section className={css.container}>
       <ProjectHeader />
-
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <AppImage
           src={project.imgHeader}
           alt="img"
-          widthImg={1600}
-          heightImg={1080}
+          widthImg={1000}
+          heightImg={1000}
           className={css.imgHeader}
           priority
+          objectFit="contain"
+          objectPos="50% 50%"
         />
       </motion.div>
       <div className={css.contentContainer}>
@@ -35,18 +35,18 @@ export const Project = ({ project }: Props) => {
           <div className={css.linksContainer}>
             {project.linkWebsite && (
               <Link href={project.linkWebsite} passHref>
-                <a target={'_blank'}>Lien du site</a>
+                <a target={'_blank'}>{t1.t('website_link')}</a>
               </Link>
             )}
 
             {project.linkGithub && (
               <Link href={project.linkGithub} passHref>
-                <a target={'_blank'}>Repo Github</a>
+                <a target={'_blank'}>Github Repo</a>
               </Link>
             )}
           </div>
           <div className={css.sectionStacks}>
-            <h5>Technologies utilisées</h5>
+            <h5>Stacks</h5>
             <ul className={css.stacks}>
               {project.stacks.map((stack, index) => {
                 return <li key={index}>{stack}</li>
@@ -55,8 +55,8 @@ export const Project = ({ project }: Props) => {
           </div>
 
           <div className={css.sectionPresentation}>
-            <h5>Présentation</h5>
-            <p dangerouslySetInnerHTML={{ __html: t2.t(project.intro) }} />
+            <h5>Introduction</h5>
+            <p dangerouslySetInnerHTML={{ __html: t1.t(project.intro) }} />
           </div>
         </div>
         <div className={css.imgsContainer}>
@@ -68,8 +68,9 @@ export const Project = ({ project }: Props) => {
                   alt={img.alt}
                   widthImg={1600}
                   heightImg={900}
+                  objectFit="contain"
                 />
-                <figcaption>{t2.t(img.caption)}</figcaption>
+                <figcaption>{t1.t(img.caption)}</figcaption>
               </figure>
             )
           })}

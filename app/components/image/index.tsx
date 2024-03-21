@@ -1,6 +1,10 @@
 import css from './index.module.scss'
 import Image, { StaticImageData } from 'next/image'
 
+declare type ImgElementStyle = NonNullable<
+  JSX.IntrinsicElements['img']['style']
+>
+
 type Props = {
   src: string | StaticImageData
   alt: string
@@ -9,6 +13,7 @@ type Props = {
   priority?: boolean
   objectPos?: string
   className?: string
+  objectFit?: ImgElementStyle['objectFit']
   rest?: any
 }
 
@@ -20,6 +25,7 @@ export const AppImage = ({
   priority,
   objectPos,
   className,
+  objectFit = 'cover',
   rest,
 }: Props) => {
   return (
@@ -31,7 +37,7 @@ export const AppImage = ({
         height={heightImg}
         layout="responsive"
         priority={priority}
-        objectFit="cover"
+        objectFit={objectFit}
         objectPosition={objectPos}
       />
     </div>

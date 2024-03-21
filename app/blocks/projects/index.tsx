@@ -32,6 +32,7 @@ type CardProjectProps = {
 
 const ProjectCard = ({ project }: CardProjectProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
+  const t1 = useTranslation('project')
 
   return (
     <li>
@@ -52,20 +53,20 @@ const ProjectCard = ({ project }: CardProjectProps) => {
         onViewportLeave={() => setIsVisible(false)}
       >
         <AnimatedTextBand
-          text="Doublecard"
+          text={project.title}
           classname={css.title}
           isVisible={isVisible}
           delay={0}
         />
         <AnimatedTextBand
-          text="Ceci est la description de mon projet"
+          text={t1.t(project.smallIntro)}
           classname={css.caption}
           isVisible={isVisible}
           delay={0.1}
         />
         <div className={css.typeArrowContainer}>
           <AnimatedTextBand
-            text="Personnal"
+            text={t1.t(project.type)}
             classname={css.type}
             isVisible={isVisible}
             delay={0.3}

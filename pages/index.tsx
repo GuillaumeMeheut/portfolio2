@@ -16,6 +16,7 @@ export async function getStaticProps({ locale }) {
         'header',
         'common',
         'projects',
+        'project',
         'contact',
         'about',
       ])),
