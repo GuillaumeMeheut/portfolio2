@@ -11,13 +11,17 @@ export const About = ({}) => {
   return (
     <section id="about" className={css.section}>
       <AnimatedText text={t1.t('titlePage')} />
-
       <Description />
-
-      <footer className={css.workingAt}>
-        <p dangerouslySetInnerHTML={{ __html: t1.t('workingAt') }} />
-        <AppImage src={ForstaLogo} alt="Forsta logo" className={css.logo} />
-      </footer>
+      <a
+        href="https://www.forsta.com/"
+        target="_blank"
+        className={css.workingAt}
+      >
+        <footer>
+          <p dangerouslySetInnerHTML={{ __html: t1.t('workingAt') }} />
+          <AppImage src={ForstaLogo} alt="Forsta logo" className={css.logo} />
+        </footer>
+      </a>{' '}
     </section>
   )
 }
