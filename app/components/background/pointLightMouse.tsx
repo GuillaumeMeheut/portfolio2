@@ -2,7 +2,7 @@ import { useThree, useFrame } from '@react-three/fiber'
 import { useEffect, useRef } from 'react'
 import interpolateColor from 'color-interpolate'
 
-const DEFAULT_COLOR = '#9C3AFF'
+const DEFAULT_COLOR = '#3AC4FF'
 
 export const PointLightMouse = () => {
   const { viewport, size } = useThree()
@@ -12,7 +12,7 @@ export const PointLightMouse = () => {
   const color = useRef(DEFAULT_COLOR)
 
   useEffect(() => {
-    const colors = [DEFAULT_COLOR, '#493AFF', '#3AC4FF']
+    const colors = [DEFAULT_COLOR,  '#58D7FF']
 
     const interpolate = interpolateColor(colors)
 
