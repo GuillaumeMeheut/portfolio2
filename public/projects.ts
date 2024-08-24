@@ -65,7 +65,7 @@ export const data: ProjectProps[] = [
     linkGithub:
       'https://github.com/GuillaumeMeheut/audio-visualizer-night-visions-nextjs',
     stacks: ['Javascript', 'NextJs'],
-    intro: 'fraktree_intro',
+    intro: 'audio_intro',
     imgs: [
       {
         src: '/assets/audio_visualizer_intro.png',
