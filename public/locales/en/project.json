@@ -9,7 +9,9 @@
   "doublecard_caption_create_lobby": "Lobby creation",
   "doublecard_caption_ingame": "In Duno game (unfinished)",
   "fraktree_small_intro": "NFT project with fraktal generation",
-  "fraktree_intro": "NFT project from generating a tree using fractal generation to deploying them to the blockhain using Moralis",
+  "fraktree_intro": "NFT project from generating a tree using fractal generation to deploying them to the blockchain using Moralis",
   "fraktree_caption_generation": "Creation of trees",
-  "fraktree_caption_website": "Presentation website"
+  "fraktree_caption_website": "Presentation website",
+  "audio_small_intro": "Audio visualization for the album Night Visions",
+  "audio_intro": "Audio visualization for the album Night Visions I first did the project few years ago in native javascript then I decided to reproduce it in react in 2024"
 }

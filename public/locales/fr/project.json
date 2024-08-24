@@ -1,6 +1,17 @@
 {
   "keywords": "guillaume meheut, portfolio, developpeur web, front, react, next.js, next, project",
   "website_link": "Lien du site",
+  "perso": "Personnel",
+  "professional": "Professionnel",
+  "doublecard_small_intro": "Site de jeux de cartes",
   "doublecard_intro": "Doublecard est un site web pour jouer à des jeux de cartes avec vos amis.",
-  "doublecard_caption_login_page": "Page de connexion"
+  "doublecard_caption_login_page": "Page de connexion",
+  "doublecard_caption_create_lobby": "Création du salon",
+  "doublecard_caption_ingame": "Partie de Duno (non terminé)",
+  "fraktree_small_intro": "Projet NFT utilisant la génération fractal",
+  "fraktree_intro": "Projet NFT, génération de plusieurs arbres puis déploiment sur la blockchain avec Moralis",
+  "fraktree_caption_generation": "Création d'arbres",
+  "fraktree_caption_website": "Site de présentation",
+  "audio_small_intro": "Visualisation audio de l'album Night Visions",
+  "audio_intro": "Visualisation audio pour l'album Night Visions J'ai d'abord réalisé ce projet il y a quelques années en javascript natif puis j'ai décidé de le reproduire en react en 2024"
 }

@@ -54,4 +54,29 @@ export const data: ProjectProps[] = [
       },
     ],
   },
+  {
+    id: 3,
+    title: 'Audio Visualizer',
+    imgIntro: '/assets/audio_visualizer_intro.png',
+    smallIntro: 'audio_small_intro',
+    type: 'perso',
+    imgHeader: '/assets/audio_visualizer_header.png',
+    linkWebsite: 'https://audio-visualizer-night-visions-nextjs.vercel.app/',
+    linkGithub:
+      'https://github.com/GuillaumeMeheut/audio-visualizer-night-visions-nextjs',
+    stacks: ['Javascript', 'NextJs'],
+    intro: 'fraktree_intro',
+    imgs: [
+      {
+        src: '/assets/audio_visualizer_intro.png',
+        alt: '',
+        caption: '',
+      },
+      {
+        src: '/assets/audio_visualizer_header.png',
+        alt: '',
+        caption: '',
+      },
+    ],
+  },
 ]
