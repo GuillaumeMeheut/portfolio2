@@ -4,4 +4,10 @@
   width: 30em;
   height: 30em;
   margin-right: 10em;
+
+  @include mobile {
+    width: 20em;
+    height: 20em;
+    margin-right: 0em;
+  }
 }

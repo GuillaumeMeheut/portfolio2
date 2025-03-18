@@ -22,12 +22,20 @@
 
     padding: 5em 10em;
 
+    @include mobile {
+      padding: 3em 3em;
+    }
+
     .presentationContainer {
       width: 75em;
 
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      @include mobile {
+        width: 100%;
+      }
     }
 
     .title {
@@ -43,6 +51,10 @@
       display: flex;
       gap: 12.5em;
       margin-top: 5em;
+      @include mobile {
+        gap: 5.5em;
+      }
+
       a {
         font-size: 2.5em;
         font-weight: 300;
@@ -62,6 +74,9 @@
           height: 0.7em;
           top: 0.25em;
           right: -1em;
+        }
+        @include mobile {
+          font-size: 2em;
         }
       }
     }
@@ -111,6 +126,10 @@
 
         &:nth-child(2n) {
           align-self: flex-end;
+        }
+
+        @include mobile {
+          width: 100%;
         }
       }
 

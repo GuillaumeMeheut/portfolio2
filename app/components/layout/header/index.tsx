@@ -14,14 +14,14 @@ export const Header = () => {
       {!/\d/.test(router.asPath) && (
         <header className={css.header}>
           <h1>Guillaume Meheut</h1>
-          <nav>
+          {/* <nav>
             <MyLink router={router} text={t1.t('about')} href={'#about'} />
             <MyLink router={router} text={t1.t('project')} href={'#projects'} />
             <MyLink router={router} text={t1.t('contact')} href={'#contact'} />
             <Link href={'/'} locale={t1.t('lang').toLowerCase()} passHref>
               <a className={css.lang}>{t1.t('lang')}</a>
             </Link>
-          </nav>
+          </nav> */}
         </header>
       )}
     </>

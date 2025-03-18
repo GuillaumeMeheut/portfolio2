@@ -1,6 +1,10 @@
 @import '~config/index.module.scss';
 
 .container {
+  @include mobile {
+    display: none;
+  }
+
   position: fixed;
   bottom: 30px;
   left: 30px;

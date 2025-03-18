@@ -2,6 +2,9 @@
 
 .container {
   margin-right: 5.5em;
+  @include mobile {
+    margin-right: 0;
+  }
 
   h6 {
     font-size: 1.6em;
@@ -9,6 +12,10 @@
     font-weight: 200;
     margin-bottom: 1.375em;
     text-transform: uppercase;
+
+    @include mobile {
+      font-size: 1.3em;
+    }
   }
 
   p,
@@ -20,6 +27,9 @@
     display: block;
     position: relative;
     width: fit-content;
+    @include mobile {
+      font-size: 2em;
+    }
   }
 
   a {

@@ -4,6 +4,9 @@
   height: 100%;
   width: 100%;
   padding: 30em 0 30em;
+  @include mobile {
+    padding: 15em 0 15em;
+  }
 }
 
 .projectsContainer {
@@ -14,11 +17,19 @@
   width: 100%;
   gap: 35em;
 
+  @include mobile {
+    gap: 15em;
+  }
+
   li {
     position: relative;
     width: 70%;
     margin-right: 22em;
 
+    @include mobile {
+      margin: 0 1.5em;
+      width: 100%;
+    }
     .projectImg {
       width: 100%;
       img {
@@ -46,11 +57,20 @@
 
       overflow: hidden;
 
+      @include mobile {
+        bottom: -10em;
+        right: calc(50% - 15em);
+        width: 30em;
+        min-height: auto;
+      }
+
       .title {
         font-size: 3em;
-        margin-left: auto;
         margin-bottom: 0.5em;
         font-weight: 600;
+        @include mobile {
+          font-size: 2em;
+        }
       }
 
       .caption {
@@ -58,6 +78,11 @@
         font-weight: 300;
         margin-bottom: 0.5em;
         line-height: 1.5em;
+        @include mobile {
+          font-size: 1.5em;
+          line-height: 1em;
+          margin-bottom: 0.5em;
+        }
       }
 
       .typeArrowContainer {
@@ -70,6 +95,9 @@
       .type {
         font-size: 1.6em;
         font-weight: 100;
+        @include mobile {
+          font-size: 1.2em;
+        }
       }
 
       .img {
@@ -80,6 +108,9 @@
 
         &:hover {
           transform: translate(5px, 5px);
+        }
+        @include mobile {
+          width: 1.3em;
         }
       }
     }
