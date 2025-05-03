@@ -32,6 +32,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@300;400&family=Gruppo&family=Lato:wght@100;200;300;400;600;700&display=swap"
             rel="stylesheet"
           />
+          <script
+            type="text/javascript"
+            src="//script.crazyegg.com/pages/scripts/0129/3803.js"
+            async={true}
+          ></script>
         </Head>
         <body>
           <Main />

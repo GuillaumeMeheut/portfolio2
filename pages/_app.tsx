@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <>
       <Transition Key={router.route} />
       <Component {...pageProps} />
-      <Script id="hotjar" strategy="afterInteractive">
+      {/* <Script id="hotjar" strategy="afterInteractive">
         {`
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
          `}
-      </Script>
+      </Script> */}
     </>
   )
 }
