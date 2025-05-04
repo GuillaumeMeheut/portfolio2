@@ -37,6 +37,11 @@ export default class MyDocument extends Document {
             src="//script.crazyegg.com/pages/scripts/0129/3803.js"
             async={true}
           ></script>
+          <script
+            defer
+            data-domain="guillaume-meheut.vercel.app"
+            src="https://plausible.io/js/script.tagged-events.js"
+          ></script>
         </Head>
         <body>
           <Main />
