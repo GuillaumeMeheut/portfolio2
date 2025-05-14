@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@300;400&family=Gruppo&family=Lato:wght@100;200;300;400;600;700&display=swap"
             rel="stylesheet"
           />
-          <script
+          {/* <script
             type="text/javascript"
             src="//script.crazyegg.com/pages/scripts/0129/3803.js"
             async={true}
@@ -42,14 +42,19 @@ export default class MyDocument extends Document {
             data-domain="guillaume-meheut.vercel.app"
             src="https://plausible.io/js/script.tagged-events.js"
           ></script>
-          {/* <script
-            defer
-            data-id="guillaume-meheut.vercel.app"
-            src="http://localhost:3000/heatpeek.js"
-          ></script> */}
           <script
             src="https://riyo-script.s3.amazonaws.com/tracking.js"
             id="traek_script&fqyRHGZxRArW4OFK701u8XqSgsSUEe6t"
+          ></script> */}
+          {/* <script
+            defer
+            id="19ba5032-3f99-463e-b3b8-cb74875822fc"
+            src="http://localhost:3000/heatpeek.js"
+          ></script> */}
+          <script
+            defer
+            id="043b8f1f-0a2f-4110-8b2e-60b84984e1c8"
+            src="http://heatpeek.vercel.app/heatpeek.js"
           ></script>
         </Head>
         <body>
