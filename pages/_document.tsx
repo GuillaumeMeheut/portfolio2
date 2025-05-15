@@ -54,7 +54,7 @@ export default class MyDocument extends Document {
           <script
             defer
             id="043b8f1f-0a2f-4110-8b2e-60b84984e1c8"
-            src="http://heatpeek.vercel.app/heatpeek.js"
+            src="https://heatpeek.vercel.app/heatpeek.js"
           ></script>
         </Head>
         <body>
