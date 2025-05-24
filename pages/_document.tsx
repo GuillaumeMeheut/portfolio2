@@ -54,7 +54,7 @@ export default class MyDocument extends Document {
           <script
             defer
             id="f002cf48-881b-44dd-868b-91cdbadf81af"
-            src="cdn.heatpeek.com/h.min.js"
+            src="https://cdn.heatpeek.com/h.js"
           ></script>
         </Head>
         <body>
