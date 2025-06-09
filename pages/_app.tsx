@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
          `}
       </Script>
-      <Script id="hotjar" strategy="afterInteractive">
+      <Script id="clarity" strategy="afterInteractive">
         {`
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
