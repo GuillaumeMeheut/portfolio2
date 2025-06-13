@@ -48,12 +48,12 @@ export default class MyDocument extends Document {
           ></script> */}
           {/* <script
             defer
-            id="f002cf48-881b-44dd-868b-91cdbadf81af"
+            id="44CQrrvH"
             src="http://localhost:3000/heatpeek.js"
           ></script> */}
           <script
-            defer
-            id="f002cf48-881b-44dd-868b-91cdbadf81af"
+            async
+            id="rINX04zo"
             src="https://cdn.heatpeek.com/h.js"
           ></script>
         </Head>
