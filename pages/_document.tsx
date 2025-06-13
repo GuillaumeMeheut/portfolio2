@@ -52,7 +52,7 @@ export default class MyDocument extends Document {
             src="http://localhost:3000/heatpeek.js"
           ></script> */}
           <script
-            async
+            defer
             id="rINX04zo"
             src="https://cdn.heatpeek.com/h.js"
           ></script>
