@@ -42,19 +42,17 @@ export default class MyDocument extends Document {
             data-domain="guillaume-meheut.vercel.app"
             src="https://plausible.io/js/script.tagged-events.js"
           ></script>
-          <script
-            src="https://riyo-script.s3.amazonaws.com/tracking.js"
-            id="traek_script&fqyRHGZxRArW4OFK701u8XqSgsSUEe6t"
-          ></script> */}
+
+
           {/* <script
             defer
             id="44CQrrvH"
-            src="http://localhost:3000/heatpeek.js"
+            src="http://localhost:3002/heatpeek-tracker.js"
           ></script> */}
           <script
             defer
             id="94ScZdQN"
-            src="https://cdn.heatpeek.com/h.js"
+            src="https://cdn.heatpeek.com/hp.js"
           ></script>
         </Head>
         <body>
