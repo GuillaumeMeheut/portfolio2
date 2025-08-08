@@ -41,17 +41,15 @@ export default class MyDocument extends Document {
             defer
             data-domain="guillaume-meheut.vercel.app"
             src="https://plausible.io/js/script.tagged-events.js"
-          ></script>
-
-
+          ></script> */}
           {/* <script
             defer
-            id="44CQrrvH"
+            id="6_4034jh"
             src="http://localhost:3002/heatpeek-tracker.js"
           ></script> */}
           <script
             defer
-            id="94ScZdQN"
+            id="NXwh62gy"
             src="https://cdn.heatpeek.com/hp.js"
           ></script>
         </Head>
